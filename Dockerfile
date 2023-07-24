@@ -8,15 +8,18 @@ WORKDIR /workspace
 RUN ls -la
 
 # Install deps
+COPY requirements.txt .
 RUN pip install -r requirements.txt
+
+# Copy files
+COPY src src
 
 # Expose HTTP port
 EXPOSE 8000
 
 # Config
-COPY chorl.dev.conf /etc/nginx/conf.d/chorl.dev.conf
 RUN python manage.py collectstatic
 RUN python manage.py migrate
 
 # Run
-CMD gunicorn 'src/wsgi:app'
+CMD gunicorn --bind :${PORT} src.wsgi
