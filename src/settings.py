@@ -20,7 +20,7 @@ DB_PASSWORD = os.environ.get("DJANGO_DB_PASS")
 if SECRET_KEY is None or DB_USER is None or DB_PASSWORD is None:
     raise ValueError("Environment lacking one of: DJANGO_KEY, DJANGO_DB_USER, DJANGO_DB_PASS")
 
-PROD = False or os.environ.get("PROD")
+PROD = os.environ.get("PROD", False)
 DEBUG = not PROD
 
 # ~~~ Localhost and all subdomains
