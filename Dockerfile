@@ -1,6 +1,9 @@
 # Python version
 FROM python:3.10
 
+# Set dir
+WORKDIR /workspace
+
 # Install deps
 RUN pip install -r requirements.txt
 
