@@ -36,4 +36,4 @@ RUN python manage.py migrate --noinput
 
 EXPOSE ${PORT}
 
-CMD gunicorn --bind :${PORT} src.wsgi
+CMD gunicorn --bind :${PORT} src.wsgi --access-logfile '-'
