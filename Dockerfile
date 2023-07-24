@@ -1,25 +1,33 @@
-# Python version
-FROM python:3.10
+# https://github.com/koyeb/example-django/blob/main/Dockerfile
+# Build first
+FROM python:3.10 AS builder
 
-# Set dir
 WORKDIR /workspace
 
-# Testing
-RUN ls -la
+RUN python3 -m venv venv
+ENV VIRTUAL_ENV=/workspace/venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-# Install deps
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-# Copy files
-COPY src src
+# Stage 2
+FROM python:3.10 AS runner
 
-# Expose HTTP port
-EXPOSE 8000
+ENV VIRTUAL_ENV=/workspace/venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV PORT=8000
+
+WORKDIR /workspace
+
+COPY --from=builder /workspace/venv venv
+COPY src src
+COPY manage.py manage.py
 
 # Config
 RUN python manage.py collectstatic
 RUN python manage.py migrate
 
-# Run
+EXPOSE ${PORT}
+
 CMD gunicorn --bind :${PORT} src.wsgi
