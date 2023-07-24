@@ -18,12 +18,11 @@ FROM python:3.10 AS runner
 RUN apt update && apt install -y systemctl nginx
 COPY www.chorl.dev.conf /etc/nginx/conf.d/www.chorl.dev.conf
 RUN nginx -t
-RUN systemctl restart nginx
+RUN systemctl enable --now nginx
 
 # Gunicorn/Django
 ENV VIRTUAL_ENV=/workspace/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-ENV PORT=8001
 
 ENV DJANGO_KEY=${DJANGO_KEY}
 ENV DJANGO_DB_USER=${DJANGO_DB_USER}
@@ -41,6 +40,6 @@ COPY manage.py manage.py
 RUN python manage.py collectstatic --noinput
 RUN python manage.py migrate --noinput
 
-EXPOSE ${PORT}
+EXPOSE 8000
 
-CMD gunicorn --bind :${PORT} src.wsgi --access-logfile '-'
+CMD gunicorn --bind :$8001 src.wsgi --access-logfile '-'
