@@ -1,2 +1,4 @@
 __pycache__/
 .vscode/
+*.sqlite3
+secrets.txt
