@@ -16,7 +16,7 @@ FROM python:3.10 AS runner
 
 # Nginx
 RUN apt update && apt install -y systemctl nginx
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY site.conf /etc/nginx/conf.d/site.conf
 RUN nginx -t
 RUN systemctl enable --now nginx
 
@@ -42,4 +42,4 @@ RUN python manage.py migrate --noinput
 
 EXPOSE 8000
 
-CMD gunicorn --bind :8001 src.wsgi --access-logfile '-'
+CMD gunicorn --bind localhost:8001 src.wsgi --access-logfile '-'
