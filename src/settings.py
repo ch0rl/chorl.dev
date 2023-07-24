@@ -26,6 +26,8 @@ DEBUG = not PROD
 # ~~~ Localhost and all subdomains
 ALLOWED_HOSTS = [
     # "*",
+    "site-chorl.koyeb.app",  # koyeb auto urls
+    ".site-chorl.koyeb.app",
     "localhost",
     "127.0.0.1",
     "www.chorl.dev",
