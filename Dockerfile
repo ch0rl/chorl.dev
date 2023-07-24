@@ -16,7 +16,7 @@ FROM python:3.10 AS runner
 
 # Nginx
 RUN apt update && apt install -y systemctl nginx
-COPY nginx.conf /etc/nginx/conf.d/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 RUN nginx -t
 RUN systemctl enable --now nginx
 
