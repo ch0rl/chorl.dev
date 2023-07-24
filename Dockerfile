@@ -16,7 +16,7 @@ FROM python:3.10 AS runner
 
 # Nginx
 RUN apt update && apt install -y systemctl nginx
-COPY www.chorl.dev.conf /etc/nginx/conf.d/www.chorl.dev.conf
+COPY nginx.conf /etc/nginx/conf.d/nginx.conf
 RUN nginx -t
 RUN systemctl enable --now nginx
 
@@ -42,4 +42,4 @@ RUN python manage.py migrate --noinput
 
 EXPOSE 8000
 
-CMD gunicorn --bind :$8001 src.wsgi --access-logfile '-'
+CMD gunicorn --bind :8001 src.wsgi --access-logfile '-'
