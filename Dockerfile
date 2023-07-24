@@ -26,11 +26,12 @@ WORKDIR /workspace
 
 COPY --from=builder /workspace/venv venv
 COPY src src
+COPY static static
 COPY manage.py manage.py
 
 # Config
-RUN python manage.py collectstatic
-RUN python manage.py migrate
+RUN python manage.py collectstatic --noinput
+RUN python manage.py migrate --noinput
 
 EXPOSE ${PORT}
 
