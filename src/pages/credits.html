@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}credits{% endblock title %}
+
+{% block content %}
+<div class="flex-box">
+    <h1>Credits</h1>
+    <hr>
+
+    <p>Unless otherwise stated, all content is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons CC Icon"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Creative Commons BY Icon"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Creative Commons SA Icon"></a>.</p>
+    <hr>
+
+    <h2>Credits</h2>
+    <ul style="margin-top: 0;">
+        <li><a href="https://m3.material.io/" target="_blank">Google Material Design 3</a></li>
+        <li><a href="https://m2.material.io/" target="_blank">Google Material Design 2</a></li>
+        <li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a>
+            <ul>
+                <li><a href="https://fonts.google.com/specimen/Open+Sans" target="_blank">Open Sans</a> &copy; Steve Matteson<sup>&dagger;</sup></li>
+                <li><a href="https://fonts.google.com/specimen/Source+Code+Pro" target="_blank">Source Code Pro</a> &copy; Paul D. Hunt<sup>&dagger;</sup></li>
+            </ul>
+        </li>
+        <li><a href="https://w3.org/" target="_blank">World Wide Web Consortium</a></li>
+    </ul>
+
+    <div style="flex-grow: 1;"></div>
+
+    <hr>
+    <p class="foot-text">
+        &dagger; Licensed under the <a href="https://scripts.sil.org/OFL" target="_blank">Open Font License</a>.
+    </p>
+</div>
+{% endblock content %}

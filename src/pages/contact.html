@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}contact{% endblock title %}
+
+{% block content %}
+    <h1>Contact</h1>
+    <hr>
+
+    <h2>Email</h2>
+    <ul>
+        <li><a href="mailto:me@chorl.dev">me@chorl.dev</a></li>
+        <li><a href="mailto:charlieredpath@pm.me">charlieredpath@pm.me</a></li>
+    </ul>
+
+    <h2>Element/Matrix</h2>
+    <ul>
+        <li><a href="https://matrix.to/#/@autumn:synapse.chorl.net" target="_blank">@autumn:synapse.chorl.net</a><sup>&dagger;</sup></li>
+    </ul>
+
+    <h2>Public Keys</h2>
+    <ul>
+        <li><a class="local-link" href="{% static '/keys/publickey.me@chorl.dev.asc' %}">me@chorl.dev</a></li>
+        <li><a class="local-link" href="{% static '/keys/publickey.charlieredpath@pm.me.asc' %}">charlieredpath@pm.me</a></li>
+    </ul>
+
+    <hr>
+    <p class="foot-text">
+        &dagger; Feel free to register here: <a href="https://element.chorl.net/register", target="_blank">element.chorl.net/register</a>
+    </p>
+{% endblock content %}

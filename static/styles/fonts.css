@@ -1,0 +1,19 @@
+@font-face {
+    font-family: OpenSans, sans-serif;
+    src: url('/var/www/chorl.net/static/styles/fonts/fonts/OpenSans-VariableFont_wdth\,wght.ttf');
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide */
+    font-weight: 125 950;
+    font-stretch: 75% 125%;
+    font-style: oblique 0deg 20deg;
+}
+
+@font-face {
+    font-family: SourceCodePro, sans-serif;
+    src: url('/var/www/chorl.net/static/styles/fonts/fonts/SourceCodePro-VariableFont_wght.ttf');
+
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide */
+    font-weight: 125 950;
+    font-stretch: 75% 125%;
+    font-style: oblique 0deg 20deg;
+}

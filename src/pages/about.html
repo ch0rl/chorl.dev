@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}about{% endblock title %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static '/styles/labels.css' %}">
+{% endblock extra_head %}
+
+{% block content %}
+    <h1>About Me</h1>
+    <hr>
+    
+    <p>
+        Hi! I'm a Queer and Neurodiverse Cyber Security student, currently based in the UK.
+    </p><br>
+
+    <div style="display: flex;">
+        <b>Jump to: </b>
+        <div class="link-flex-box">
+            <a href="#labels" class="header-a local-link">labels</a>
+            <a href="#interests" class="header-a local-link">interests</a>
+            <a href="#interests" class="header-a local-link">interests</a>
+        </div>
+    </div>
+    
+    <h2 class="subheader" id="labels">Labels I Use</h2>
+    <div class="foot-text">Hover over each for more information.</div>
+    <hr>
+
+    <div class="label-box">
+        {% for label in label_list %}
+        <div class="label">
+            {{ label.0 }}
+            <span class="definition">{{ label.1 }}</span>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="subheader" id="interests">Interests in More Detail</h2>
+    <hr>
+
+    <h3 class="subsubheader">Cyber Security</h3>
+    <p>
+        I'm both a Cyber Security student and enthusiast, interested in all areas thereof but especially:
+        <ul>
+            <li>Human Behaviours</li>
+            <li>Penetration Testing</li>
+            <li>OSINT (OpenSource INTelligence) / OPSEC (OPerational SECurity)</li>
+            <li>Physical Security</li>
+        </ul>
+    </p>
+
+    <h3 class="subsubheader">Computer Science</h3>
+    <p>
+
+    </p>
+
+    <h3 class="subsubheader">Maths</h3>
+    <p>
+        I tend to enjoy maths problems that are ridiculously &ldquo;over the top&rdquo; and tend to stem from &ldquo;what if...&rdquo; type conversations. For example:
+    </p>
+    <ul>
+        <li>If two masses are placed in a vacuum, how long would it take &ndash; due to their gravitation alone &ndash; for them to collide? (As a function of their masses and initial positions.)<sup>1</sup></li>
+        <li>If a beam of light is &ldquo;shot&rdquo; along a plane, with constant gravity, will it ever hit the plane? (If so, when?)</li>
+        <li>How far away is a storm, given the time difference between lightning and thunder being observed? (see <a href="{% static 'storm-distance.pdf' %}" target="_blank">storm-distance.pdf</a>)</li>
+    </ul>
+
+    <h3 class="subsubheader">Academia</h3>
+    <p>
+        
+    </p>
+
+    <h3 class="subsubheader">Safety &ndash; First-Aid, etc.</h3>
+    <p>
+        
+    </p>
+
+    <hr>
+    <p class="foot-text">
+        1. It was only after a lot of thinking about this that I realised it's the n-body problem.
+    </p>
+{% endblock content %}

@@ -1,0 +1,31 @@
+.label {
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: #37474F;
+    font-weight: bolder;
+    margin: 1rem;
+}
+
+.label-box {
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: wrap;
+}
+
+.label .definition {
+    font-size: smaller;
+    font-weight: normal;
+
+    visibility: hidden;
+
+    background-color: #455A64;
+    padding: .5em;
+    border-radius: .5em;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.label:hover .definition {
+    visibility: visible;
+}

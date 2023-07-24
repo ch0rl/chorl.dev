@@ -1,0 +1,171 @@
+/* Fill whole screen, default font 16px. */
+html, body {
+    height: 100%;
+    font-size: 16px;
+}
+
+/* Set background, font, font colour. */
+body {
+    background-color: #212121;
+    font-family: OpenSans, sans-serif;
+    color: rgba(255, 255, 255, 87%);
+    margin: 0;
+}
+
+/* Remove margin under headings for hr. */
+h1 {
+    margin-bottom: 0;
+}
+
+/* Make sure hrs fill width. */
+hr {
+    width: 100%;
+}
+
+/* Flex box things. */
+.flex-box {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.flex-half {
+    width: 50%;
+    display: inline-block;
+}
+
+/* Header styling. */
+.header {
+    display: flex;
+    padding: 1.5rem;
+    font-size: larger;
+    background-color: #37474F;
+    flex: 0 1 auto;
+    opacity: 87%;
+}
+
+/* Wrap header links nicely. */
+.link-flex-box {
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: wrap;
+}
+
+/* Add padding between header links.  */
+.header-a {
+    margin: 0 1rem;
+}
+
+/* Set main content padding, flex, font opacity. */
+.main-content {
+    padding: 2rem;
+    flex: 1 0 auto;
+
+    background-color: #424242;
+    opacity: 87%;
+}
+
+/* Smaller font size on smaller screens */
+@media (max-width: 50rem) {
+    html, body {
+        font-size: 14px;
+    }
+}
+
+/* Add margin on larger screens. */
+@media (min-width: 50rem) {
+    .main-content {
+        margin: 0 20%;
+    }
+}
+
+/* Footer colour etc. */
+.footer {
+    background-color: #37474F;
+    flex: 0 1 auto;
+    opacity: 87%;
+}
+
+/* General foot text should be more opaque. */
+.foot-text {
+    opacity: 70%;
+    margin-top: 0;
+    font-weight: normal;
+}
+
+/* General subheading styling. */
+.subheader {
+    margin-top: 2rem;
+    margin-bottom: 8pt;
+    font-weight: bold;
+}
+
+.subsubheader {
+    margin-top: 0;
+    margin-bottom: 8pt;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* Change links to be nicer. */
+a:visited {
+    color: rgba(255, 255, 255, 60%);
+}
+
+a:link {
+    color: inherit;
+}
+
+/* Distinguish local and external links. */
+.local-link {
+    text-decoration-style: dotted;
+}
+
+/* More separation between lis and squares. */
+li {
+    margin: .5rem 0;
+    list-style: square;
+}
+
+dt {
+    padding-top: .3em;
+}
+
+dl {
+    padding-left: 0;
+}
+
+/* Paragraphs in a detail tag should be small and custom margins. */
+.details-para {
+    font-size: smaller;
+    color: rgba(255, 255, 255, 70%);
+    margin-top: 3pt;
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+/* Hover-over tooltips. */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    text-decoration: underline dotted;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+
+    background-color: #455A64;
+    text-align: center;
+    padding: .5em;
+    border-radius: .5em ;
+
+    width: max-content;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
