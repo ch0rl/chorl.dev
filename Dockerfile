@@ -18,7 +18,6 @@ FROM python:3.10 AS runner
 RUN apt update && apt install -y systemctl nginx
 COPY site.conf /etc/nginx/conf.d/site.conf
 RUN nginx -t
-RUN systemctl enable --now nginx
 
 # Gunicorn/Django
 ENV VIRTUAL_ENV=/workspace/venv
@@ -42,4 +41,4 @@ RUN python manage.py migrate --noinput
 
 EXPOSE 8000
 
-CMD gunicorn --bind localhost:8001 src.wsgi --access-logfile '-'
+CMD nginx & gunicorn --bind localhost:8001 src.wsgi --access-logfile '-'
