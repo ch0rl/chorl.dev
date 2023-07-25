@@ -53,7 +53,7 @@ hr {
 
 /* Add padding between header links.  */
 .header-a {
-    margin: 0 1rem;
+    margin: .5rem 1rem;
 }
 
 /* Set main content padding, flex, font opacity. */
