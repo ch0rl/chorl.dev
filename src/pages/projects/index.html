@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}projects{% endblock title %}
 
 {% block content %}
     <h1>Projects</h1>
     <hr>
+
+    <h2>Research</h2>
+    <p>I enjoy small research projects, usually resulting in a short &ldquo;paper&rdquo;/&ldquo;report&rdquo;&semi; the following is a list of these.</p>
+    <ul>
+        <li><a class="local-link" href="{% static 'storm-distance.pdf' %}" target="_blank">The Distance of a Storm Based on Thunder and Lightning</a></li>
+        <li><a class="local-link" href="{% static 'autism-at-rest.pdf' %}" target="_blank">Autistic functioning at rest: A collation of existing literature.</a></li>
+    </ul>
 {% endblock content %}
