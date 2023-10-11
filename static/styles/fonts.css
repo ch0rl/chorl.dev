@@ -1,3 +1,4 @@
+/*noinspection CssUnknownTarget*/
 @font-face {
     font-family: OpenSans, sans-serif;
     src: url('/var/www/chorl.dev/static/styles/fonts/fonts/OpenSans-VariableFont_wdth\,wght.ttf');
@@ -8,6 +9,7 @@
     font-style: oblique 0deg 20deg;
 }
 
+/*noinspection ALL*/
 @font-face {
     font-family: SourceCodePro, sans-serif;
     src: url('/var/www/chorl.dev/static/styles/fonts/fonts/SourceCodePro-VariableFont_wght.ttf');
