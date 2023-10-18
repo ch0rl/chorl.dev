@@ -13,12 +13,12 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ~~~ Secrets
-SECRET_KEY = os.environ.get("DJANGO_KEY")
-DB_USER = os.environ.get("DJANGO_DB_USER")
-DB_PASSWORD = os.environ.get("DJANGO_DB_PASS")
+SECRET_KEY = os.environ.get("DJANGO_KEY", "filler")
+DB_USER = os.environ.get("DJANGO_DB_USER", "filler")
+DB_PASSWORD = os.environ.get("DJANGO_DB_PASS", "filler")
 
-if SECRET_KEY is None or DB_USER is None or DB_PASSWORD is None:
-    raise ValueError("Environment lacking one of: DJANGO_KEY, DJANGO_DB_USER, DJANGO_DB_PASS")
+# if SECRET_KEY is None or DB_USER is None or DB_PASSWORD is None:
+#     raise ValueError("Environment lacking one of: DJANGO_KEY, DJANGO_DB_USER, DJANGO_DB_PASS")
 
 PROD = os.environ.get("PROD", False)
 DEBUG = not PROD
