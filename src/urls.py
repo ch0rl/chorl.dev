@@ -27,4 +27,5 @@ urlpatterns = [
     path("credits", basic.credits, name="credits"),
     path("projects/", include("src.projects.urls")),
     path("robots.txt", basic.robots, name="robots"),
+    path("email-disclaimer", basic.disclaimer, name="email-disclaimer"),
 ]

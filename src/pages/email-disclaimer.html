@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}email disclaimer{% endblock title %}
+
+{% block content %}
+    <h1>Email Disclaimer</h1>
+    <hr>
+
+    <h2>Content</h2>
+    <p>
+        Content of any communications are for the recipients only and may be privileged/confidential, and should be treated as such.
+        If you are not the intended recipient, please <a href="{% url 'contact' %}" target="_blank" class="local-link">let me know</a> immediately and delete the message.
+    </p>
+
+    <h2>Attachments &amp; Links</h2>
+    <p>
+        Any attached files are not guaranteed to be free of malware, viruses, etc., and are downloaded and opened at your own risk.
+        Similarly, I cannot take responsibility for the content of any sites linked to.
+        Of course, I would not intentionally send malware to anyone, or link to sites that I had not vetted, but this disclaimer still stands.
+    </p>
+
+    <h2>Tone</h2>
+    <p>
+        As I am autistic, I struggle to convey tone properly; I, therefore, ask that you assume the best and read any message from me as being light-hearted.
+        I rarely, if ever, message anyone with accusatory/negative/harsh intent, so it is safe to assume I do not mean to come across that way.
+        Where possible (i.e., not in formal communications), I will endeavour to use <a href="https://toneindicators.carrd.co/" target="_blank">tone tags/indicators</a> to clarify tone.
+    </p>
+{% endblock content %}

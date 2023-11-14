@@ -42,3 +42,7 @@ def robots(request: HttpRequest):
         "disallow: *",
         request
     )
+
+
+def disclaimer(request: HttpRequest):
+    return render(request, "email-disclaimer.html")
