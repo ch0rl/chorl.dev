@@ -38,8 +38,12 @@ def credits(request: HttpRequest):
 
 def robots(request: HttpRequest):
     return HttpResponse(
-        "user-agent: *\n"
-        "disallow: *",
+        (
+            "User-agent: *\n"
+            "Disallow: /\n"
+            f"User-agent: {request.headers.get('User-Agent')}\n"
+            "Disallow: /"
+        ),
         request
     )
 
