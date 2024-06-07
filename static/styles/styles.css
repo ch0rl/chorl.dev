@@ -15,7 +15,7 @@ body {
 
 /* Remove margin under headings for hr. */
 h1 {
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }
 
 /* Make sure hrs fill width. */
