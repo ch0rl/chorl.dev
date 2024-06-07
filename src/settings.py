@@ -14,12 +14,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ~~~ Secrets
 SECRET_KEY = os.environ.get("DJANGO_KEY", "filler")
-DB_USER = os.environ.get("DJANGO_DB_USER", "filler")
-DB_PASSWORD = os.environ.get("DJANGO_DB_PASS", "filler")
-
-# if SECRET_KEY is None or DB_USER is None or DB_PASSWORD is None:
-#     raise ValueError("Environment lacking one of: DJANGO_KEY, DJANGO_DB_USER, DJANGO_DB_PASS")
-
 PROD = os.environ.get("PROD", False)
 DEBUG = not PROD
 
@@ -80,8 +74,12 @@ WSGI_APPLICATION = 'src.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME', 'chorl-dev'),
+        'USER': 'admin',
+        'PASSWORD': os.environ.get("DB_PASS", "postgres"),  # <-- Obviously this is not the password used in production
+        'HOST': os.environ.get("DB_HOST", "localhost"),
+        'OPTIONS': {'sslmode': 'require'},
     }
 }
 
