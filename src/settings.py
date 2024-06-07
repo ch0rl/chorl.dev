@@ -76,7 +76,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('DB_NAME', 'chorl-dev'),
-        'USER': 'admin',
+        'USER': os.environ.get('DB_USER', 'postgres'),
         'PASSWORD': os.environ.get("DB_PASS", "postgres"),  # <-- Obviously this is not the password used in production
         'HOST': os.environ.get("DB_HOST", "localhost"),
         'OPTIONS': {'sslmode': 'require'},
