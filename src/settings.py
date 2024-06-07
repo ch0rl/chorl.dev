@@ -76,13 +76,17 @@ DB_NAME, DB_USER, DB_PASS, DB_HOST = (os.environ.get('DB_NAME', 'chorl-dev'), os
                                       os.environ.get("DB_PASS", "postgres"), os.environ.get("DB_HOST", "localhost"))
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': DB_NAME,
+    #     'USER': DB_USER,
+    #     'PASSWORD': DB_PASS,
+    #     'HOST': DB_HOST,
+    #     'OPTIONS': {'sslmode': 'require'},
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': DB_NAME,
-        'USER': DB_USER,
-        'PASSWORD': DB_PASS,
-        'HOST': DB_HOST,
-        'OPTIONS': {'sslmode': 'require'},
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
