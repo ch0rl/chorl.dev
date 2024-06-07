@@ -72,13 +72,16 @@ WSGI_APPLICATION = 'src.wsgi.application'
 
 # ~~~ Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+DB_NAME, DB_USER, DB_PASS, DB_HOST = (os.environ.get('DB_NAME', 'chorl-dev'), os.environ.get('DB_USER', 'postgres'),
+                                      os.environ.get("DB_PASS", "postgres"), os.environ.get("DB_HOST", "localhost"))
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'chorl-dev'),
-        'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get("DB_PASS", "postgres"),  # <-- Obviously this is not the password used in production
-        'HOST': os.environ.get("DB_HOST", "localhost"),
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASS,
+        'HOST': DB_HOST,
         'OPTIONS': {'sslmode': 'require'},
     }
 }
