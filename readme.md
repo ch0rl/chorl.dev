@@ -2,5 +2,4 @@
 Source for the site [www.chorl.dev](https://www.chorl.dev).
 
 ---
-The source code herein is licensed under [GPLv3](./LICENSE).  
-The content of the site itself is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Content is licensed under the [Opinionated Queer License v1.1](https://oql.avris.it/license/v1.1?c=Autumn%20R%7Chttps%3A%2F%2Fchorl.dev).
