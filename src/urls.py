@@ -23,7 +23,6 @@ urlpatterns = [
     path("", basic.index, name="index"),
     path("contact", basic.contact, name="contact"),
     path("about", basic.about, name="about"),
-    path("about-site", basic.site, name="about-site"),
     path("credits", basic.credits, name="credits"),
     path("projects/", include("src.projects.urls")),
     path("robots.txt", basic.robots, name="robots"),

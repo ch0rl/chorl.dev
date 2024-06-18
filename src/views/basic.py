@@ -67,10 +67,6 @@ def about(request: HttpRequest):
     return render(request, "about.html", context={"label_list": label_list, "interests": interests})
 
 
-def site(request: HttpRequest):
-    return render(request, "about-site.html")
-
-
 def credits(request: HttpRequest):
     return render(request, "credits.html")
 
