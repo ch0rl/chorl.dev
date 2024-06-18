@@ -1,81 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}about{% endblock title %}
-{% block extra_head %}
-    <link rel="stylesheet" href="{% static '/styles/labels.css' %}">
-{% endblock extra_head %}
+{% block title %}about{% endblock %}
 
 {% block content %}
-    <h1>About Me</h1>
-    <hr>
-    
-    <p>
-        Hi! I'm a Queer and Neurodiverse Cyber Security student, and aspiring academic, currently based in the UK.
-    </p>
+    <h1 class="display-1">About me</h1>
 
-    <div style="display: flex;">
-        <div class="link-flex-box">
-            <b class="header-a">Jump to: </b>
-            <a href="#labels" class="header-a local-link">labels</a>
-            <a href="#interests" class="header-a local-link">interests</a>
-        </div>
-    </div>
-    
-    <h2 class="subheader" id="labels">Labels I Use</h2>
-    <div class="foot-text">Hover over each for more information.</div>
-    <hr>
-
-    <div class="label-box">
+    <h2>Labels I use</h2>
+    <div>
         {% for label in label_list %}
-        <div class="label">
-            {{ label.0 }}
-            <span class="definition">{{ label.1 }}</span>
-        </div>
+            <button type="button" class="btn btn-secondary m-2" data-bs-html="true" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="{{ label.1 | escape }}">
+                {{ label.0 }}
+            </button>
         {% endfor %}
     </div>
 
-    <h2 class="subheader" id="interests">Interests in More Detail</h2>
-    <hr>
+    <h2 class="mt-5">Interests</h2>
 
-    <h3 class="subsubheader">Cyber Security</h3>
-    <p>
-        I'm both a Cyber Security student and enthusiast, interested in all areas thereof but especially:
-    </p>
-    <ul>
-        <li>Human Behaviours</li>
-        <li>Penetration Testing</li>
-        <li>OSINT (OpenSource INTelligence) / OPSEC (OPerational SECurity)</li>
-        <li>Physical Security</li>
-        <li>Ethics and Morals</li>
-        <li>Hacktivism</li>
-    </ul>
-    
-    <h3 class="subsubheader">Maths</h3>
-    <p>
-        I tend to enjoy maths problems that are &ldquo;over the top&rdquo; and tend to stem from &ldquo;what if...&rdquo; type conversations. For example:
-    </p>
-    <ul>
-        <li>If two masses are placed in a vacuum, how long would it take &ndash; due to their gravitation alone &ndash; for them to collide? (As a function of their masses and initial positions.)<sup>1</sup></li>
-        <li>If a beam of light is &ldquo;shot&rdquo; along a plane, with constant gravity, will it ever hit the plane? (If so, when?)</li>
-        <li>
-            How far away is a storm, given the time difference between lightning and thunder being observed? <br>
-            <i class="foot-text">see <a class="local-link" href="{% static 'storm-distance.pdf' %}" target="_blank">storm-distance.pdf</a></i>
-        </li>
-    </ul>
-
-    <h3 class="subsubheader">Academia</h3>
-    <p>
-        I enjoy research, and learning in general, for more on this see <a class="local-link" href="{% url 'projects-index' %}" target="_blank">projects</a>.
-    </p>
-
-    <h3 class="subsubheader">Safety &ndash; First-Aid, etc.</h3>
-    <p>For some reason, I find topics such as safety, first aid, rigging rope systems, life guarding, etc., very interesting.</p>
-    <p>As a child, I enjoyed climbing trees to rig rope systems; I enjoyed learning, and teaching, first aid; I did an FSRT<sup>2</sup> in cadets; and I learnt life guarding for a while.</p>
-
-    <hr>
-    <ol class="foot-text">
-        <li>It was only after a lot of thinking about this that I realised it's the n-body problem.</li>
-        <li>Standing for Foundation Safety and Rescue Training - specifically to do with canoes, kayaks, paddleboards, etc.</li>
-    </ol>
-{% endblock content %}
+    <div class="d-flex flex-wrap">
+        {% for i in interests %}
+            <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
+                <div class="card-body">
+                    <h3 class="card-title">{{ i.0 }}</h3>
+                    <p class="card-text">{{ i.1 }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,6 +1,7 @@
+import json
 from random import shuffle
 from django.http import HttpResponse, HttpRequest
-from django.shortcuts import render
+from django.shortcuts import render, resolve_url
 
 
 def index(request: HttpRequest):
@@ -25,7 +26,45 @@ def about(request: HttpRequest):
         ["Activist", "Someone who partakes in activism."]
     ]
     shuffle(label_list)
-    return render(request, "about.html", context={"label_list": label_list})
+
+    interests = [
+        ["Cyber Security", """
+            I'm interested in all parts of cyber security, but my some of my key interests are in:
+            <ul>
+                <li>human behaviours,</li>
+                <li>penetration testing,</li>
+                <li><abbr>OSINT</abbr> (OpenSource INTelligence) / <abbr>OPSEC</abbr> (OPerational SECurity),</li>
+                <li>physical security,</li>
+                <li>ethics and morals, and</li>
+                <li>hacktivism.</li>
+            </ul>
+        """],
+        ["Human Rights", """
+            Specifically, I'm interested in:
+            <ul>
+                <li>the international context and application of human rights and IHL (International Humanitatian Law),</li>
+                <li>the right to protest,</li>
+                <li>police and state responsibilities, and</li>
+                <li><abbr>LGBTQIA+</abbr> rights, especially for gender-queer people.</li>
+            </ul>
+        """],
+        ["Research", f"""
+            I tend to enjoy random research projects, and just learning in general; see also <a href="{resolve_url('projects-index')}">projects</a>.
+        """],
+        ["Safety &ndash; First-Aid, etc.", """
+            I find the following topics interesting, in the context of safety, first-aid, etc.
+            <ul>
+                <li>rope systems,</li>
+                <li>first aid,</li>
+                <li>preparation,</li>
+                <li>regulatory compliance, and</li>
+                <li>safety &ldquo;on the water&rdquo;, &ldquo;at height&rdquo;, etc.</li>
+            </ul>
+        """]
+    ]
+    shuffle(interests)
+
+    return render(request, "about.html", context={"label_list": label_list, "interests": interests})
 
 
 def site(request: HttpRequest):

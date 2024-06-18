@@ -1,38 +1,24 @@
 {% extends 'base.html' %}
 
-{% block title %}credits{% endblock title %}
+{% block title %}credits{% endblock %}
 
 {% block content %}
-<div class="flex-box">
-    <h1>Credits</h1>
-    <hr>
+    <h1 class="display-1">Credits</h1>
 
-    <p>
-        Unless otherwise stated, all content is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons CC Icon"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Creative Commons BY Icon"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Creative Commons SA Icon"></a>. <br>
-
-        The <a href="https://github.com/ch0rl/chorl.dev" target="_blank">source code</a> of this site is licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GPLv3</a>.
-    </p>
-    <hr>
-
-    <h2>Credits</h2>
-    <ul style="margin-top: 0;">
-        <li><a href="https://m3.material.io/" target="_blank">Google Material Design 3</a></li>
-        <li><a href="https://m2.material.io/" target="_blank">Google Material Design 2</a></li>
-        <li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a>
-            <ul>
-                <li><a href="https://fonts.google.com/specimen/Open+Sans" target="_blank">Open Sans</a> &copy; Steve Matteson<sup>&dagger;</sup></li>
-                <li><a href="https://fonts.google.com/specimen/Source+Code+Pro" target="_blank">Source Code Pro</a> &copy; Paul D. Hunt<sup>&dagger;</sup></li>
-            </ul>
-        </li>
-        <li><a href="https://w3.org/" target="_blank">World Wide Web Consortium</a></li>
-        <li><a href="https://www.koyeb.com/">Koyeb</a> for hosting this site.</li>
+    <h2>Content Used</h2>
+    <ul>
+        <li><a href="https://www.koyeb.com/" target="_blank">Koyeb</a> (hosting service)</li>
+        <li><a href="https://oql.avris.it/license/" target="_blank">Opinionated Queer License</a> and logo &copy; <a href="https://avris.it/" target="_blank">Andrea Vos</a> (<a href="https://oql.avris.it/license/" target="_blank">OQL licence</a>)</li>
+        <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap v5.3.3</a> &copy; The Bootstrap Authors (<a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank">MIT licence</a>)</li>
+        <li><a href="https://icons.getbootsrap.com/" target="_blank">Bootstrap Icons v1.11.3</a> same as above</li>
+        <li><a href="https://en.pronouns.page/" target="_blank">Pronouns Page</a> logo &copy; <a target="_blank" href="https://avris.it">Andrea Vos</a>, <a target="_blank" href="https://zaimki.pl/kolektyw-rjn">Kolektyw „Rada Języka Neutralnego”</a> (<a href="https://en.pronouns.page/license" target="_blank">OQL licence</a>)</li>
     </ul>
 
-    <div style="flex-grow: 1;"></div>
-
-    <hr>
-    <p class="foot-text">
-        &dagger; Licensed under the <a href="https://scripts.sil.org/OFL" target="_blank">Open Font License</a>.
-    </p>
-</div>
-{% endblock content %}
+    <h3>Pseudo-Bibliography</h3>
+    <ul>
+        <li><a href="https://w3.org/" target="_blank">World Wide Web Consortium</a></li>
+        <li><a href="https://m3.material.io/" target="_blank">Google Material Design 3</a></li>
+        <li><a href="https://m2.material.io/" target="_blank">Google Material Design 2</a></li>
+        <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+    </ul>
+{% endblock %}

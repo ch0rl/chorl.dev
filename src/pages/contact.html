@@ -2,19 +2,18 @@
 
 {% load static %}
 
-{% block title %}contact{% endblock title %}
+{% block title %}contact{% endblock %}
 
 {% block content %}
-    <h1>Contact</h1>
-    <hr>
+    <h1 class="display-1">Contact</h1>
 
     <h2>Email</h2>
     <ul>
-        <li><a href="mailto:me@chorl.dev">me@chorl.dev</a></li>
+        <li><address><a href="mailto:me@chorl.dev">me@chorl.dev</a></address></li>
     </ul>
 
     <h2>Public Keys</h2>
     <ul>
         <li><a class="local-link" href="{% static '/keys/publickey.me@chorl.dev.asc' %}">me@chorl.dev</a></li>
     </ul>
-{% endblock content %}
+{% endblock %}

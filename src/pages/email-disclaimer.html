@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 
-{% block title %}email disclaimer{% endblock title %}
+{% block title %}email disclaimer{% endblock %}
 
 {% block content %}
-    <h1>Email Disclaimer</h1>
-    <hr>
+    <h1 class="display-1">Email Disclaimer</h1>
 
     <h2>Content</h2>
     <p>
         Content of any communications are for the recipients only and may be privileged/confidential, and should be treated as such.
-        If you are not the intended recipient, please <a href="{% url 'contact' %}" target="_blank" class="local-link">let me know</a> immediately and delete the message.
+        If you are not the intended recipient, please <a href="{% url 'contact' %}">let me know</a> immediately and delete the message.
     </p>
 
     <h2>Attachments &amp; Links</h2>
@@ -31,4 +30,4 @@
         I tend to work at varying times throughout the day — sometimes 1200, sometimes 0300 — so, if I do respond at some random time, please do not think I am expecting a similar response.
         If you want to reply at some random time as well, be my guest, but I'm certainly not expecting it.
     </p>
-{% endblock content %}
+{% endblock %}
