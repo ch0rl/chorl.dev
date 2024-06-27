@@ -2,6 +2,7 @@ import json
 from random import shuffle
 from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render, resolve_url
+from .user_agents import BLOCK_ALL
 
 
 def index(request: HttpRequest):
@@ -77,8 +78,8 @@ def robots(request: HttpRequest):
             "User-agent: *\n"
             "Disallow: /\n"
             f"User-agent: {request.headers.get('User-Agent')}\n"
-            "Disallow: /"
-        ),
+            "Disallow: /\n"
+        ) + BLOCK_ALL,
         request
     )
 
