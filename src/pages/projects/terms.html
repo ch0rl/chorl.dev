@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap-table.min.css' %}">
+{% endblock %}
+
+{% block title %}terminology{% endblock %}
+
+{% block content %}
+    <h1 class="display-1">Inclusive Cyber Security Terminology</h1>
+
+    <table data-pagination="true" data-search="true" id="table" data-regex-search="true">
+        <thead>
+            <tr>
+                <th data-field="t" data-sortable="true">Term(s)</th>
+                <th data-field="r">Replacement(s)</th>
+                <th data-field="e">Explanation</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-table.min.js' %}"></script>
+    <script>
+        const data = [
+            {% for term in terms %}
+                {
+                    "t": "{{ term.0 }}",
+                    "r": "{{ term.1 }}",
+                    "e": "{{ term.2 }}"
+                },
+            {% endfor %}
+        ];
+        const $table = $("#table");
+        $table.bootstrapTable({data});
+    </script>
+{% endblock %}
