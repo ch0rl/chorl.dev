@@ -10,15 +10,63 @@
 {% block content %}
     <h1 class="display-1">Inclusive Cyber Security Terminology</h1>
 
-    <table data-pagination="true" data-search="true" id="table" data-regex-search="true">
-        <thead>
-            <tr>
-                <th data-field="t" data-sortable="true">Term(s)</th>
-                <th data-field="r">Replacement(s)</th>
-                <th data-field="e">Explanation</th>
-            </tr>
-        </thead>
-    </table>
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-tab-pane" 
+                    type="button" role="tab" aria-controls="about-tab-pane" aria-selected="true">About</button>
+            <button class="nav-link" id="method-tab" data-bs-toggle="tab" data-bs-target="#method-tab-pane" 
+                    type="button" role="tab" aria-controls="method-tab-pane" aria-selected="false">Methodology</button>
+            <button class="nav-link" id="data-tab" data-bs-toggle="tab" data-bs-target="#data-tab-pane" 
+                    type="button" role="tab" aria-controls="data-tab-pane" aria-selected="false">The Data Itself</button>
+        </div>
+    </nav>
+    <div class="tab-content" id="tab-content">
+        <div class="tab-pane fade show active" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
+            <p class="pt-3">
+                Much cyber security terminology is based on tradition, with terms of unsavoury origins being common.
+                While these terms are not used with any mal-intent today, better alternatives exist.
+            </p>
+
+            <p>
+                Additionally, many terms are obscure and non-intuitive.
+                For example, the terms &ldquo;whitelist&rdquo; or &ldquo;blue team&rdquo; don't mean much to people outside the industry.
+                however, alternatives such as &ldquo;allow-list&rdquo; and &ldquo;defensive team&rdquo; are much more understandable.
+            </p>
+        </div>
+        <div class="tab-pane fade" id="method-tab-pane" role="tabpanel" aria-labelledby="method-tab" tabindex="0">
+            <p class="pt-3">
+                This whole project was inspired by <a href="https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white" target="_blank">this</a> NCSC blog post that explains why the NCSC moved to &lsquo;allow list&rsquo; and &lsquo;deny list&rsquo; in place of &lsquo;whitelist&rsquo; and &lsquo;blacklist&rsquo;.
+            </p>
+            
+            <p>
+                Terms were sourced from the following sources, with some also providing narrative.
+                Where alternatives were not given (i.e., the source is just a list of definitions), I relied on judgement, other explanations, and other sources.
+            </p>
+            
+            <ul>
+                <li>Association for Computing Machinery, &ldquo;<a href="https://www.acm.org/diversity-inclusion/words-matter" target="_blank">Words Matter</a>&rdquo;.</li>
+                <li>Emma W (NCSC), &ldquo;<a href="https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white" target="_blank">Terminology: it's not black and white</a>&rdquo;.</li>
+                <li>UK Cyber Security Council, &ldquo;<a href="https://www.ukcybersecuritycouncil.org.uk/glossary/" target="_blank">Glossary of cyber security terms</a>&rdquo;.</li>
+            </ul>
+            
+            <p>
+                Additionally, the <a href="https://www.etymonline.com/" target="_blank">Online Etymology Dictionary</a> was helpful in tracing the origins of words.
+            </p>
+        </div>
+        <div class="tab-pane fade" id="data-tab-pane" role="tabpanel" aria-labelledby="data-tab" tabindex="0">            
+            <div style="width: 90%">
+                <table data-pagination="true" data-search="true" id="table" data-regex-search="true">
+                    <thead>
+                    <tr>
+                        <th data-field="t" data-sortable="true">Term(s)</th>
+                        <th data-field="r">Replacement(s)</th>
+                        <th data-field="e">Explanation</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
 
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap-table.min.js' %}"></script>

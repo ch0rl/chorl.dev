@@ -12,7 +12,7 @@ def kinks(request: HttpRequest):
 
 def terminology(request: HttpRequest):
     return render(request, "projects/terms.html", context={"terms": [
-        ('Abort, Terminate', 'Cancel, Stop, End, Finalise', ''),
+        ('Abort, Terminate', 'Cancel, Stop, End, Finalise', 'Abort and terminate carry violent connotations.'),
         ('Normal', '', ''),
         ('Blacklist', 'Denylist, Blocklist', ''),
         ('Whitelist', 'Allowlist, Approvedlist', ''),
