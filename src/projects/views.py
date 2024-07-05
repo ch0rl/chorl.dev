@@ -17,15 +17,12 @@ def get_terms():
     with open(settings.BASE_DIR / "src/projects/terms.csv") as f:
         __raw_terms = f.read().splitlines()[1:]
 
-    terms = []
     for line in __raw_terms:
         parts = [i.strip() for i in line.split("|")]
         if len(parts) == 3:
-            terms.append(parts)
+            yield parts
         else:
             print(f"[!] failed parsing '{line}' into three '|'-seperated parts.")
-
-    return terms
 
 
 if settings.PROD:
