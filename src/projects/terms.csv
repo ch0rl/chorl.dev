@@ -1,0 +1,44 @@
+original | alternative | description
+Abort, Terminate | Cancel, Stop, End, Finalise | Abort and terminate carry violent connotations.
+Normal |  Expected, Standard|The term 'normal' can imply that conditions that aren't 'normal' don't exist or are, in some way, worse.
+Blacklist | Denylist, Blocklist |See the NCSC article referenced.
+Whitelist | Allowlist, Approvedlist |As with 'blacklist'.
+Blackhat | Hostile actor, Hostile force |As with 'blacklist'.
+Whitehat | Friendly actor, Security tester, Ethical hacker |As with 'blacklist'.
+Greyhat |  Ambiguous actor|
+Black box | Opaque box |As with 'blacklist'.
+White box | Clear box, Open box |As with 'blacklist'.
+Blind | Anonymous |'Blind' doesn't mean much to someone who doesn't already know the definition and could be seen as ableist.
+Double blind | Double anonymous |As with 'blind'.
+Dark | Deceptive, Manipulative |Much with black/white terms, 'dark' does not need to carry any negative connotation; it is also a very broad and non-descriptive term.
+Motherboard | Primary board, Main board |The 'mother' prefix adds unnecessary gendered langauge.
+Daughter board | Secondary board, Auxiliary board |As with 'motherboard'.
+Female connector | Socket, Concave connector |As with 'motherboard'.
+Male connector | Plug, Convex connector |Similar to 'motherboard'.
+Master | Main, Primary, Leader, Host |'Master' and 'slave' are very socially charged terms.
+Slave | Replica, Secondary, Follower, Client |As with 'master'.
+Orphan | Unreferenced, Unlinked, De-referenced |
+Sanity check | Confidence check, Unit test, Quick check, Final check, Clarity check |'Sanity check' could be seen as ableist language.
+Back door |  |
+Red team | Outside testers, Attacking team, Attack simulators |
+Blue team | Defensive team |
+Purple team |  |
+Demilitarised Zone | Public service network, Untrusted segment, Perimeter network |'DMZ' is a militaristic term.
+Hacker (negative) | Threat actor, Attacker |
+Man-in-the-middle | Interception, Interceptor, Person-in-the-middle |
+Salt |  |
+Zero day |  |
+Cripples|Slows|'Cripples' could be seen as an ableist term.
+Dummy|Placeholder, Example|'Dummy' could be seen as an ableist term.
+Man-hours|Person-hours, Work-hours|Using 'man' as the default adds unnecessary gendered langauge.
+Mankind|Humanity|As with 'man-hours'.
+He/Him/His|They/Them/Theirs|As with 'man-hours'.
+Native|Built-in|
+First-class citizen|Core feature, Built-in|The idea of a 'first-class citizen' is very socially charged.
+The disabled|Disabled people, People with disabilities|Referring to all disabled people as 'the disabled' could be seen as ableist.
+Disabled|Inactive, Unusable|Using 'disabled' to refer to something that does not currently work could be perceived as ableist.
+Man (v.)|Staff|As with 'man-hours'.
+Hang|Stop responding|'Hang' has violent connotations.
+Bullet-proof||'Bullet-proof' has militaristic/violent connotations and implies that something cannot be invincible.
+Cyber kill chain|Cyberattack chain|'Kill' has violent connotations.
+Firstname, Lastname||See <a href='https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/' target='_blank'>Falsehoods Programmers Believe About Names</a>.
