@@ -37,6 +37,10 @@
                 If you have any suggestions for terms to be added, changed, or removed, please <a href="{% url 'contact' %}">get in touch</a>.
             </p>
             
+            <strong>
+                This project is very much a work in progress.  
+            </strong>
+            
             <h2 class="pt-3">Thanks</h2>
             <p>
                 Thanks to <a href="https://rya.nc/" target="_blank">Ryan Castellucci (they/them)</a> for pointing me towards the Google style guide.
@@ -62,7 +66,6 @@
                 <li>&mdash;, &ldquo;<a href="https://learn.microsoft.com/en-gb/style-guide/militaristic-language" target="_blank">Militaristic language</a>&rdquo;.</li>
                 <li>Apple, &ldquo;<a href="https://support.apple.com/en-gb/guide/applestyleguide/apdcb2a65d68/web" target="_blank">Intro to inclusive writing</a>&rdquo;.</li>
                 <li>RedHat, &ldquo;<a href="https://redhat-documentation.github.io/supplementary-style-guide/" target="_blank">Red Hat supplementary style guide for product documentation</a>&rdquo;.</li>
-                <li>Rich Bowen et al., &ldquo;<a href="https://github.com/conscious-lang/conscious-lang-docs" target="_blank">Conscious Language in your Open Source Projects</a>&rdquo;.</li>
             </ul>
             
             <p>
@@ -90,9 +93,9 @@
         const data = [
             {% for term in terms %}
                 {
-                    "t": "{{ term.0 }}",
-                    "r": "{{ term.1 }}",
-                    "e": "{{ term.2 }}"
+                    "t": "{{ term.0 | escapejs }}",
+                    "r": "{{ term.1 | escapejs }}",
+                    "e": "{{ term.2 | escapejs }}"
                 },
             {% endfor %}
         ];
