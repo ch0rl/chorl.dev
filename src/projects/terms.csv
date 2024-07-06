@@ -1,5 +1,5 @@
 original | alternative | description
-Abort, Terminate | Cancel, Stop, End, Finalise | Abort and terminate carry violent connotations.
+Abort, Terminate, Kill | Cancel, Stop, End, Finalise | These terms carry violent connotations.
 Normal |  Expected, Standard|The term 'normal' can imply that conditions that aren't 'normal' don't exist or are, in some way, worse.
 Blacklist | Denylist, Blocklist |See the NCSC article referenced.
 Whitelist | Allowlist, Approvedlist |As with 'blacklist'.
@@ -42,3 +42,4 @@ Hang|Stop responding|'Hang' has violent connotations.
 Bullet-proof||'Bullet-proof' has militaristic/violent connotations and implies that something cannot be invincible.
 Cyber kill chain|Cyberattack chain|'Kill' has violent connotations.
 Firstname, Lastname||See <a href='https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/' target='_blank'>Falsehoods Programmers Believe About Names</a>.
+Dead|Stopped responding, Stopped processing|'Dead' has violent connotations.
