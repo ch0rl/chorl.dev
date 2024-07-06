@@ -25,12 +25,9 @@ def get_terms():
             print(f"[!] failed parsing '{line}' into three '|'-seperated parts.")
 
 
-TERMS = get_terms()
+TERMS = list(get_terms())
 
 
 def terminology(request: HttpRequest):
-    if settings.DEBUG:
-        return render(request, "projects/terms.html", context={"terms": get_terms()})
-
     return render(request, "projects/terms.html", context={"terms": TERMS})
 
