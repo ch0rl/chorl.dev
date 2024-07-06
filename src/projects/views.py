@@ -25,8 +25,7 @@ def get_terms():
             print(f"[!] failed parsing '{line}' into three '|'-seperated parts.")
 
 
-if settings.PROD:
-    TERMS = get_terms()
+TERMS = get_terms()
 
 
 def terminology(request: HttpRequest):
