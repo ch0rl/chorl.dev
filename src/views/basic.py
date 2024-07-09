@@ -86,3 +86,7 @@ def robots(request: HttpRequest):
 
 def disclaimer(request: HttpRequest):
     return render(request, "email-disclaimer.html")
+
+
+def teapot(_):
+    return HttpResponse("I'm a teapot", status=418)
