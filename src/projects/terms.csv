@@ -20,9 +20,9 @@ Slave | Replica, Secondary, Follower, Client |As with 'master'.
 Orphan | Unreferenced, Unlinked, De-referenced |
 Sanity check | Confidence check, Unit test, Quick check, Final check, Clarity check |'Sanity check' could be seen as ableist language.
 Back door |  |
-Red team | Outside testers, Attacking team, Attack simulators |
-Blue team | Defensive team |
-Purple team |  |
+Red team | Outside testers, Attacking team, Attack simulators |'Red team' has both militaristic connotations and does not mean much to someone who doesn't know the definition.
+Blue team | Defensive team |As with 'red team'.
+Purple team |  |As with 'red team'.
 Demilitarised Zone | Public service network, Untrusted segment, Perimeter network |'DMZ' is a militaristic term.
 Hacker (negative) | Threat actor, Attacker |
 Man-in-the-middle | Interception, Interceptor, Person-in-the-middle |
@@ -32,14 +32,14 @@ Cripples|Slows|'Cripples' could be seen as an ableist term.
 Dummy|Placeholder, Example|'Dummy' could be seen as an ableist term.
 Man-hours|Person-hours, Work-hours|Using 'man' as the default adds unnecessary gendered langauge.
 Mankind|Humanity|As with 'man-hours'.
-He/Him/His|They/Them/Theirs|As with 'man-hours'.
+He/Him/His (as a generic 3<sup>rd</sup> person)|They/Them/Theirs|As with 'man-hours'.
 Native|Built-in|
 First-class citizen|Core feature, Built-in|The idea of a 'first-class citizen' is very socially charged.
 The disabled|Disabled people, People with disabilities|Referring to all disabled people as 'the disabled' could be seen as ableist.
 Disabled|Inactive, Unusable|Using 'disabled' to refer to something that does not currently work could be perceived as ableist.
 Man (v.)|Staff|As with 'man-hours'.
 Hang|Stop responding|'Hang' has violent connotations.
-Bullet-proof||'Bullet-proof' has militaristic/violent connotations and implies that something cannot be invincible.
+Bullet-proof||'Bullet-proof' has militaristic/violent connotations and implies that something can be invincible.
 Cyber kill chain|Cyberattack chain|'Kill' has violent connotations.
 Firstname, Lastname||See <a href='https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/' target='_blank'>Falsehoods Programmers Believe About Names</a>.
 Dead|Stopped responding, Stopped processing|'Dead' has violent connotations.
