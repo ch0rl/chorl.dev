@@ -29,3 +29,14 @@ def terms_api(request: HttpRequest):
     ), content_type="application/json")
 
 
+def browser(request: HttpRequest):
+    in_req = {
+        "ip": request.headers.get("X-Forwarded-For", "n/a"),
+        "user_agent": request.headers.get("User-Agent", "n/a"),
+        "cookies": json.dumps(request.COOKIES, indent=4),
+        "referrer": request.headers.get("Referer", "n/a"),
+        "via": request.headers.get("Via", "n/a"),
+    }
+    revealed = ...
+
+    return render(request, "projects/browser.html", context={"in_req": in_req, "revealed": revealed})

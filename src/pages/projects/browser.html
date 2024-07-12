@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}browser data{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/highlight.js.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-table.min.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="display-1">What Does my Browser Show?</h1>
+
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-tab-pane"
+                    type="button" role="tab" aria-controls="about-tab-pane" aria-selected="true">About</button>
+            <button class="nav-link" id="method-tab" data-bs-toggle="tab" data-bs-target="#method-tab-pane"
+                    type="button" role="tab" aria-controls="method-tab-pane" aria-selected="false">How it Works</button>
+            <button class="nav-link" id="data-tab" data-bs-toggle="tab" data-bs-target="#data-tab-pane"
+                    type="button" role="tab" aria-controls="data-tab-pane" aria-selected="false">The Data Itself</button>
+        </div>
+    </nav>
+    <div class="tab-content" id="tab-content">
+        <div class="tab-pane fade show active" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
+            <p class="pt-3">This project is a fun idea I had about what data a browser reveals to websites.</p>
+        </div>
+        <div class="tab-pane fade" id="method-tab-pane" role="tabpanel" aria-labelledby="method-tab" tabindex="0">
+            <p class="pt-3">Data is split into two sections: &ldquo;In Request&rdquo; and &ldquo;Can be Revealed&rdquo;.</p>
+
+            <h2 class="pt-3">In Request</h2>
+            <p class="pt-3">
+                Data revealed in HTTP requests is gathered from the following, where <code>request</code> is a <a href="https://docs.djangoproject.com/en/5.0/ref/request-response/#httprequest-objects" target="_blank">Django HttpRequest</a> object.
+            </p>
+
+            <pre><code class="language-python" style="max-width: max(70%, 50em); width: min-content">in_req = {
+    "ip": request.headers.get("X-Forwarded-For", "n/a"),
+    "user_agent": request.headers.get("User-Agent", "n/a"),
+    "cookies": json.dumps(request.COOKIES, indent=4),
+    "referrer": request.headers.get("Referer", "n/a"),
+    "via": request.headers.get("Via", "n/a"),
+}</code></pre>
+
+            <h2 class="pt-3">Can be Revealed</h2>
+            <p class="pt-3">
+                As for data that can be revealed, this is done through the below JavaScript and only handled client-side.
+                However, this could be easily exported to a server.
+            </p>
+        </div>
+        <div class="tab-pane fade" id="data-tab-pane" role="tabpanel" aria-labelledby="data-tab" tabindex="0">
+            <h2 class="pt-3">In Request</h2>
+            <table data-toggle="table">
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IP Address</td>
+                        <td>{{ in_req.ip }}</td>
+                    </tr>
+                    <tr>
+                        <td>User Agent</td>
+                        <td>{{ in_req.user_agent }}</td>
+                    </tr>
+                    <tr>
+                        <td>Cookies</td>
+                        <td style="max-width: 80vw"><pre><code class="language-json">{{ in_req.cookies | escape }}</code></pre></td>
+                    </tr>
+                    <tr>
+                        <td>Referrer</td>
+                        <td>{{ in_req.referer }}</td>
+                    </tr>
+                    <tr>
+                        <td>Via</td>
+                        <td>{{ in_req.via }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="pt-3">Can be Revealed</h2>
+            <strong class="pt-2">
+                For clarity, this data is only displayed and not shared.
+            </strong>
+            
+            <button class="btn btn-primary" onclick="fill_table()">Generate</button>
+            
+            <table id="cbr-table">
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <script src="{% static 'js/highlight.min.js' %}"></script>
+    <script src="{% static 'js/highlight.js/json.min.js' %}"></script>
+    <script src="{% static 'js/highlight.js/python.min.js' %}"></script>
+    <script src="{% static 'js/highlight.js/js.min.js' %}"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-table.min.js' %}"></script>
+    <script>
+        function fill_table() {
+            let local_storage = [];
+            for (var i = 0; i < localStorage.length; i++){
+                local_storage.push([localStorage.key(i), localStorage.getItem(localStorage.key(i))].join(": "));
+            }
+
+            let location;
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    location = position;
+                });
+            } else {
+                location = "n/a";
+            }
+
+            const data = [
+                ["Language", navigator.language],
+                ["Cookies", "<pre><code>[\n" + document.cookie.split(";").join(",\n") + "\n]</code></pre>"],
+                ["Local Storage", "<pre><code>[\n" + local_storage.join(",\n") + "\n]</code></pre>"],
+                ["Screen Size", [screen.width, screen.height]],
+                ["Document Size", [document.width, document.height]],
+                ["Location", location],
+                ["Navigator", navigator]
+            ];
+            
+            const $table = $("#cbr-table");
+            $table.bootstrapTable({data});
+        }
+    </script>
+{% endblock %}
