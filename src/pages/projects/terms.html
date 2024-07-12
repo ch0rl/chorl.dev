@@ -89,17 +89,12 @@
 
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap-table.min.js' %}"></script>
-    <script>
-        const data = [
-            {% for term in terms %}
-                {
-                    "t": "{{ term.0 | escapejs }}",
-                    "r": "{{ term.1 | escapejs }}",
-                    "e": "{{ term.2 | escapejs }}"
-                },
-            {% endfor %}
-        ];
+    <script type="module">
         const $table = $("#table");
-        $table.bootstrapTable({data});
+        const response = await fetch("{% url 'api-terms' %}");
+        if (response.ok) {
+            const data = await response.json();
+            $table.bootstrapTable({data});
+        }
     </script>
 {% endblock %}
