@@ -39,7 +39,7 @@ COPY manage.py manage.py
 
 # Config
 RUN python manage.py collectstatic --noinput
-RUN python -e DB_PASS=${DB_PASS} -e DB_HOST=${DB_HOST} -e DB_NAME=${DB_NAME} -e DB_USER=${DB_USER} -e PROD=1 -e DJANGO_KEY=${DJANGO_KEY} manage.py migrate --noinput
+RUN DB_PASS=${DB_PASS} DB_HOST=${DB_HOST} DB_NAME=${DB_NAME} DB_USER=${DB_USER} PROD=1 DJANGO_KEY=${DJANGO_KEY} python manage.py migrate --noinput
 
 EXPOSE 8000
 
