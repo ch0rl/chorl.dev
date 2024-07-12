@@ -23,11 +23,11 @@ RUN nginx -t
 ENV VIRTUAL_ENV=/workspace/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-#ENV DJANGO_KEY=${DJANGO_KEY}
-#ENV DB_PASS=${DB_PASS}
-#ENV DB_HOST=${DB_HOST}
-#ENV DB_NAME=${DB_NAME}
-#ENV DB_USER=${DB_USER}
+ENV DJANGO_KEY=${DJANGO_KEY}
+ENV DB_PASS=${DB_PASS}
+ENV DB_HOST=${DB_HOST}
+ENV DB_NAME=${DB_NAME}
+ENV DB_USER=${DB_USER}
 ENV PROD=true
 
 WORKDIR /workspace
@@ -39,7 +39,7 @@ COPY manage.py manage.py
 
 # Config
 RUN python manage.py collectstatic --noinput
-RUN python manage.py migrate --noinput
+RUN python -e DB_PASS=${DB_PASS} -e DB_HOST=${DB_HOST} -e DB_NAME=${DB_NAME} -e DB_USER=${DB_USER} -e PROD=1 -e DJANGO_KEY=${DJANGO_KEY} manage.py migrate --noinput
 
 EXPOSE 8000
 
