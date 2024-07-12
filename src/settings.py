@@ -73,8 +73,11 @@ WSGI_APPLICATION = 'src.wsgi.application'
 
 # ~~~ Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-DB_NAME, DB_USER, DB_PASS, DB_HOST = (os.environ.get('DB_NAME', 'chorl-dev'), os.environ.get('DB_USER', 'postgres'),
+DB_NAME, DB_USER, DB_PASS, DB_HOST = (os.environ.get('DB_NAME', 'koyebdb'), os.environ.get('DB_USER', 'admin'),
                                       os.environ.get("DB_PASS", "postgres"), os.environ.get("DB_HOST", "localhost"))
+
+# DEBUG
+print(os.environ.items())
 
 DATABASES = {
     'default': {
