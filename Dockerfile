@@ -23,13 +23,6 @@ RUN nginx -t
 ENV VIRTUAL_ENV=/workspace/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-ENV DJANGO_KEY=${DJANGO_KEY}
-ENV DB_PASS=${DB_PASS}
-ENV DB_HOST=${DB_HOST}
-ENV DB_NAME=${DB_NAME}
-ENV DB_USER=${DB_USER}
-ENV PROD=true
-
 WORKDIR /workspace
 
 COPY --from=builder /workspace/venv venv
@@ -43,4 +36,4 @@ RUN DB_PASS=${DB_PASS} DB_HOST=${DB_HOST} DB_NAME=${DB_NAME} DB_USER=${DB_USER} 
 
 EXPOSE 8000
 
-CMD nginx & gunicorn --bind localhost:8001 src.wsgi --access-logfile '-'
+CMD DB_PASS=${DB_PASS} DB_HOST=${DB_HOST} DB_NAME=${DB_NAME} DB_USER=${DB_USER} PROD=1 DJANGO_KEY=${DJANGO_KEY} nginx & gunicorn --bind localhost:8001 src.wsgi --access-logfile '-'
