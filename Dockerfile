@@ -15,7 +15,7 @@ RUN pip install -r requirements.txt
 FROM python:3.10 AS runner
 
 # Nginx
-RUN apt update && apt install -y systemctl nginx
+RUN apt update && apt install -y systemctl nginx sqlite3
 COPY site.conf /etc/nginx/conf.d/site.conf
 RUN nginx -t
 
