@@ -19,6 +19,26 @@ def terminology(request: HttpRequest):
     return render(request, "projects/terms.html")
 
 
+def get_terms():
+    # Only read file once
+    # TODO: When updated to use DB, will have to read each time for live updates
+    with open(settings.BASE_DIR / "src/projects/terms.csv") as f:
+        __raw_terms = f.read().splitlines()[1:]
+
+    for line in __raw_terms:
+        parts = [i.strip() for i in line.split("|")]
+        if len(parts) == 3:
+            yield parts
+        else:
+            print(f"[!] failed parsing '{line}' into three '|'-seperated parts.")
+
+
+# Import terms into DB on load
+Terms.objects.bulk_create([
+      Terms(old=i[0], new=i[1], description=i[2]) for i in get_terms() if not Terms.objects.filter(old=i[0]).exists()
+  ])
+
+
 def terms_api(request: HttpRequest):
     return HttpResponse(json.dumps(
         [{

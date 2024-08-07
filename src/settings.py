@@ -73,25 +73,25 @@ WSGI_APPLICATION = 'src.wsgi.application'
 
 # ~~~ Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-DB_NAME, DB_USER, DB_PASS, DB_HOST = (os.environ.get('DB_NAME', 'koyebdb'), os.environ.get('DB_USER', 'admin'),
-                                      os.environ.get("DB_PASS", "postgres"), os.environ.get("DB_HOST", "localhost"))
+# DB_NAME, DB_USER, DB_PASS, DB_HOST = (os.environ.get('DB_NAME', 'koyebdb'), os.environ.get('DB_USER', 'admin'),
+#                                       os.environ.get("DB_PASS", "postgres"), os.environ.get("DB_HOST", "localhost"))
 
 # DEBUG
 print(os.environ.items())
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': DB_NAME,
-        'USER': DB_USER,
-        'PASSWORD': DB_PASS,
-        'HOST': DB_HOST,
-        'OPTIONS': {'sslmode': 'require'},
-    },
     # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': DB_NAME,
+    #     'USER': DB_USER,
+    #     'PASSWORD': DB_PASS,
+    #     'HOST': DB_HOST,
+    #     'OPTIONS': {'sslmode': 'require'},
+    # },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 # ~~~ Internationalization
