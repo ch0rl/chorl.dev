@@ -35,8 +35,8 @@ def get_terms():
 
 # Import terms into DB on load
 Terms.objects.bulk_create([
-      Terms(old=i[0], new=i[1], description=i[2]) for i in get_terms() if not Terms.objects.filter(old=i[0]).exists()
-  ])
+    Terms(old=i[0], new=i[1], description=i[2]) for i in get_terms() if not Terms.objects.filter(old=i[0]).exists()
+])
 
 
 def terms_api(request: HttpRequest):
