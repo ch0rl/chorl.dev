@@ -37,6 +37,7 @@ COPY static static
 COPY manage.py manage.py
 
 # Config
+RUN echo 'create table projects_terms (id serial, old string, new string, description string);' | ./manage.py dbshell
 RUN python manage.py collectstatic --noinput
 RUN python manage.py migrate --noinput
 
