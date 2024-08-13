@@ -16,7 +16,6 @@
     </div>
 
     <h2 class="mt-5">Interests</h2>
-
     <div class="d-flex flex-wrap">
         {% for i in interests %}
             <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
@@ -27,4 +26,18 @@
             </div>
         {% endfor %}
     </div>
+    
+    <h2 class="mt-5">Credentials</h2>
+    <p class="mt-1" style="opacity: 60%"><sup>&dagger;</sup>Recorded under my deadname &ldquo;Charlie Redpath&rdquo;.</p>
+    <div class="d-flex flex-wrap">
+        {% for i in creds %}
+            <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
+                <div class="card-body">
+                    <h3 class="card-title">{{ i.0 }}</h3>
+                    <p class="card-text">{{ i.1 }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
 {% endblock %}
