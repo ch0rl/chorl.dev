@@ -79,7 +79,11 @@ def about(request: HttpRequest):
             'Cyber Awards 2021</a>.'
         ],
         ["CIISec Affiliate Associate Membership",
-            "TODO: Cert/link"
+            '<a href="https://www.credly.com/badges/04ac218c-94a1-43b6-a237-a7b97800f0dc/public_url" target="_blank">'
+            f'<img src="{static("images/chartered-institute-of-information-security-ciisec-accredited-affiliate-member.png")}"'
+            '       alt="Chartered Institute of Information Security (CIISec) Accredited Affiliate Member Badge"'
+            '       class="img-fluid">'
+            '</a>'
         ],
         ["Chief Scout's Gold Award", ""],
         ["Foundation Safety &amp; Rescue Training", ""],
