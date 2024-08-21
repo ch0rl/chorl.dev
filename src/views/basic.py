@@ -5,6 +5,7 @@ from typing import List
 from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render, resolve_url
 from .user_agents import BLOCK_ALL
+from django.templatetags.static import static
 
 
 def index(request: HttpRequest):
