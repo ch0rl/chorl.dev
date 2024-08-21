@@ -5,8 +5,16 @@
 
 {% block content %}
     <h1 class="display-1">About me</h1>
+    
+    <h2>Jump to</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="#labels">Labels I Use</a></li>
+        <li class="list-group-item"><a href="#interests">Interests</a></li>
+        <li class="list-group-item"><a href="#credentials">Credentials</a></li>
+        <li class="list-group-item"><a href="#experience">Experience</a></li>
+    </ul>
 
-    <h2>Labels I use</h2>
+    <h2 class="mt-5" id="labels">Labels I Use</h2>
     <div>
         {% for label in label_list %}
             <button type="button" class="btn btn-secondary m-2" data-bs-html="true" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="{{ label.1 | escape }}">
@@ -15,7 +23,7 @@
         {% endfor %}
     </div>
 
-    <h2 class="mt-5">Interests</h2>
+    <h2 class="mt-5" id="interests">Interests</h2>
     <div class="d-flex flex-wrap">
         {% for i in interests %}
             <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
@@ -27,7 +35,7 @@
         {% endfor %}
     </div>
     
-    <h2 class="mt-5">Credentials</h2>
+    <h2 class="mt-5" id="credentials">Credentials</h2>
     <p class="mt-1" style="opacity: 60%"><sup>&dagger;</sup>Recorded under my deadname &ldquo;Charlie Redpath&rdquo;.</p>
     <div class="d-flex flex-wrap">
         {% for i in creds %}
@@ -38,6 +46,11 @@
                 </div>
             </div>
         {% endfor %}
+    </div>
+
+    <h2 class="mt-5" id="Experience">Experience</h2>
+    <div class="d-flex flex-wrap">
+
     </div>
     
 {% endblock %}
