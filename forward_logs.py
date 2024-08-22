@@ -1,3 +1,4 @@
+import queue
 import socketserver
 import json
 import sys
@@ -16,18 +17,11 @@ class Handler(socketserver.BaseRequestHandler):
     db_name = os.getenv("DB_NAME", "chorl-dev")
     db_user = os.getenv("DB_USER", "postgres")
     db_pass = os.getenv("DB_PASS", "")
-    conn = psycopg2.connect(f"dbname={db_name} user={db_user} host={db_host} password={db_pass}")
+
+    queue = []
 
     def to_db(self, data):
-        print(data)
-        cur = Handler.conn.cursor()
-        cur.execute("insert into access_log ("
-                    "path, ip, stamp, user_agent, id_got, id_set, status, forwarded_for, referrer) values ("
-                    "%(path)s, %(ip)s, %(time)s, %(user_agent)s, %(user_id_got)s, %(user_id_set)s, "
-                    "%(status)s, %(x_forwarded_for)s, %(http_referrer)s);",
-                    data)
-        Handler.conn.commit()
-        cur.close()
+        Handler.queue.append(data)
 
     def handle(self):
         print(self.request[0], file=sys.stderr)
@@ -38,6 +32,20 @@ class Handler(socketserver.BaseRequestHandler):
             return
         else:
             self.to_db(data)
+
+    def setup(self):
+        if len(Handler.queue) >= 20:
+            conn = psycopg2.connect(
+                f"dbname={Handler.db_name} user={Handler.db_user} host={Handler.db_host} password={Handler.db_pass}")
+            cur = conn.cursor()
+            for i in Handler.queue:
+                cur.execute("insert into access_log ("
+                            "path, ip, stamp, user_agent, id_got, id_set, status, forwarded_for, referrer) values ("
+                            "%(path)s, %(ip)s, %(time)s, %(user_agent)s, %(user_id_got)s, %(user_id_set)s, "
+                            "%(status)s, %(x_forwarded_for)s, %(http_referrer)s);", i)
+            conn.commit()
+            cur.close()
+            conn.close()
 
 
 print("logging forwarding starting", file=sys.stderr)
