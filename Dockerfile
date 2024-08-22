@@ -16,13 +16,13 @@ FROM python:3.10 AS runner
 
 # Nginx
 RUN apt update && apt install -y systemctl nginx sqlite3
+RUN apt install -y postgresql postgresql-contrib libpq-dev python3-dev
 COPY site.conf /etc/nginx/conf.d/site.conf
 RUN nginx -t
 
 # Gunicorn/Django
 ENV VIRTUAL_ENV=/workspace/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-ENV PROD=1
 
 WORKDIR /workspace
 
@@ -30,12 +30,13 @@ COPY --from=builder /workspace/venv venv
 COPY src src
 COPY static static
 COPY manage.py manage.py
+COPY forward_logs.py forward_logs.py
 
 # Config
 RUN echo 'create table projects_terms (id serial, old string, new string, description string);' | ./manage.py dbshell
-RUN python manage.py collectstatic --noinput
+#RUN python manage.py collectstatic --noinput
 RUN python manage.py migrate --noinput
 
 EXPOSE 8000
 
-CMD nginx & gunicorn --bind localhost:8001 src.wsgi --access-logfile '-'
+CMD nginx & python forward_logs.py & gunicorn --bind localhost:8001 src.wsgi
