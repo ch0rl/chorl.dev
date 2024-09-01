@@ -23,6 +23,12 @@ RUN nginx -t
 # Gunicorn/Django
 ENV VIRTUAL_ENV=/workspace/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV PROD=1
+
+ARG DB_HOST
+ARG DB_USER
+ARG DB_NAME
+ARG DB_PASS
 
 WORKDIR /workspace
 
@@ -34,7 +40,7 @@ COPY forward_logs.py forward_logs.py
 
 # Config
 RUN echo 'create table projects_terms (id serial, old string, new string, description string);' | ./manage.py dbshell
-#RUN python manage.py collectstatic --noinput
+RUN python manage.py collectstatic --noinput
 RUN python manage.py migrate --noinput
 
 EXPOSE 8000
