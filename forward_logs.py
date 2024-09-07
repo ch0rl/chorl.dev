@@ -46,6 +46,7 @@ class Handler(socketserver.BaseRequestHandler):
             conn.commit()
             cur.close()
             conn.close()
+            Handler.queue = []
 
 
 print("logging forwarding starting", file=sys.stderr)
