@@ -41,6 +41,7 @@ def about(request: HttpRequest):
                 <li>penetration testing,</li>
                 <li><abbr>OSINT</abbr> (OpenSource INTelligence) / <abbr>OPSEC</abbr> (OPerational SECurity),</li>
                 <li>physical security,</li>
+                <li>the application of international law in cyberspace,</li>
                 <li>ethics and morals, and</li>
                 <li>hacktivism.</li>
             </ul>
