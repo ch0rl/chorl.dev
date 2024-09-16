@@ -5,7 +5,7 @@
 
 {% block content %}
     <h1 class="display-1">About me</h1>
-    
+
     <h2>Jump to</h2>
     <ul class="list-group">
         <li class="list-group-item"><a href="#labels">Labels I Use</a></li>
@@ -17,7 +17,8 @@
     <h2 class="mt-5" id="labels">Labels I Use</h2>
     <div>
         {% for label in label_list %}
-            <button type="button" class="btn btn-secondary m-2" data-bs-html="true" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="{{ label.1 | escape }}">
+            <button type="button" class="btn btn-secondary m-2" data-bs-html="true" data-bs-toggle="tooltip"
+                    data-bs-placement="top" data-bs-title="{{ label.1 | escape }}">
                 {{ label.0 }}
             </button>
         {% endfor %}
@@ -25,32 +26,142 @@
 
     <h2 class="mt-5" id="interests">Interests</h2>
     <div class="d-flex flex-wrap">
-        {% for i in interests %}
-            <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
-                <div class="card-body">
-                    <h3 class="card-title">{{ i.0 }}</h3>
-                    <p class="card-text">{{ i.1 }}</p>
+        <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
+            <div class="card-body">
+                <h3 class="card-title">Cyber Security</h3>
+                <div class="card-text">
+                    I&lsquo;m interested in all parts of cyber security, but my some of my key interests are in:
+                    <ul>
+                        <li>human behaviours,</li>
+                        <li>penetration testing,</li>
+                        <li><abbr title="Open Source Intelligence">OSINT</abbr>/<abbr title="Operational Security">OPSEC</abbr>,</li>
+                        <li>physical security,</li>
+                        <li>the application of international law in cyberspace,</li>
+                        <li>ethics and morals, and</li>
+                        <li>hacktivism.</li>
+                    </ul>
                 </div>
             </div>
-        {% endfor %}
+        </div>
+        
+        <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
+            <div class="card-body">
+                <h3 class="card-title">Human Rights</h3>
+                <div class="card-text">
+                    Specifically, I&lsquo;m interested in:
+                    <ul>
+                        <li>the international context and application of human rights and <abbr title="International Humanitarian Law">IHL</abbr>,</li>
+                        <li>the right to protest,</li>
+                        <li>police and state responsibilities, and</li>
+                        <li><abbr title="Lesbian, Gay, Bisexual, Transgender, Queer, Intersex, Asexual/Aromantic, and others">LGBTQIA+</abbr> rights, especially for gender-queer people.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
+            <div class="card-body">
+                <h3 class="card-title">Research</h3>
+                <div class="card-text">
+                    I tend to enjoy random research projects, and just learning in general; see also <a href="{% url 'projects-index' %}">projects</a>.
+                </div>
+            </div>
+        </div>
+        
+        <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
+            <div class="card-body">
+                <h3 class="card-title">Safety &ndash; First-Aid, etc.</h3>
+                <div class="card-text">
+                    I find the following topics interesting, in the context of safety, first-aid, etc.
+                    <ul>
+                        <li>rope systems,</li>
+                        <li>first aid,</li>
+                        <li>preparation,</li>
+                        <li>regulatory compliance, and</li>
+                        <li>safety &ldquo;on the water&rdquo;, &ldquo;at height&rdquo;, etc.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    
+
     <h2 class="mt-5" id="credentials">Credentials</h2>
-    <p class="mt-1" style="opacity: 60%"><sup>&dagger;</sup>Recorded under my deadname &ldquo;Charlie Redpath&rdquo;.</p>
-    <div class="d-flex flex-wrap">
-        {% for i in creds %}
+        <p class="mt-1" style="opacity: 60%"><sup>&dagger;</sup>Recorded under my deadname &ldquo;Charlie Redpath&rdquo;.</p>
+        <div class="d-flex flex-wrap">
             <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
                 <div class="card-body">
-                    <h3 class="card-title">{{ i.0 }}</h3>
-                    <p class="card-text">{{ i.1 }}</p>
+                    <h3 class="card-title">Cyber <abbr title="Extended Project Qualification">EPQ</abbr> A*</h3>
+                    <div class="card-text">
+                        A Level 3 Extended Project Qualification, with the research topic: &ldquo;How great is the risk 
+                        surrounding the sale of USB Rubber Duckies to the public, which can be used for malicious purposes?&rdquo;.
+                    </div>
                 </div>
             </div>
-        {% endfor %}
-    </div>
+        
+            <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
+                <div class="card-body">
+                    <h3 class="card-title">Finalist for the &lsquo;Cyber Security Student of the Year&rsquo;<sup>&dagger;</sup></h3>
+                    <div class="card-text">As part of the <a href="https://thenationalcyberawards.org/2021-finalists/" target="_blank">National Cyber Awards 2021</a>.</div>
+                </div>
+            </div>
+        
+            <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
+                <div class="card-body">
+                    <h3 class="card-title"><abbr title="Chartered Institute of Information Security">CIISec</abbr> Affiliate Associate Membership</h3>
+                    <div class="card-text"><a href="https://www.credly.com/badges/04ac218c-94a1-43b6-a237-a7b97800f0dc/public_url" target="_blank">
+                        <img src="{% static 'images/chartered-institute-of-information-security-ciisec-accredited-affiliate-member.png' %}" 
+                             alt="Chartered Institute of Information Security (CIISec) Accredited Affiliate Member Badge" class="img-fluid" width="200em">
+                    </a></div>
+                </div>
+            </div>
+        
+            <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
+                <div class="card-body">
+                    <h3 class="card-title">Chief Scout&lsquo;s Gold Award</h3>
+                    <div class="card-text"></div>
+                </div>
+            </div>
+        
+            <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
+                <div class="card-body">
+                    <h3 class="card-title">Foundation Safety &amp; Rescue Training</h3>
+                    <div class="card-text"></div>
+                </div>
+            </div>
+        
+            <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
+                <div class="card-body">
+                    <h3 class="card-title">National Indoor Climbing Award Scheme</h3>
+                    <div class="card-text"></div>
+                </div>
+            </div>
+        
+            <div class="card m-2 flex-grow-1" style="width: max(20%, 18rem)">
+                <div class="card-body">
+                    <h3 class="card-title">Competitions<sup>&dagger;</sup></h3>
+                    <div class="card-text">
+                        <ul>
+                            <li>Cyber First Advanced</li>
+                            <li>British Informatics Olympiad</li>
+                            <li>Hack The Box - Cyber Apocalypse 2021: placed 1,305/4,740</li>
+                            <li>SANS Boot Up <abbr title="Capture The Flag">CTF</abbr>: placed 126/1,293</li>
+                            <li>SANS Foundations Course &amp; Proctored Exam (beta for SEC275)</li>
+                            <li>Jupiter Rockets Europa: placed 27/178</li>
+                            <li>Cyber Discovery
+                                <ul>
+                                    <li>CyberStart Game</li>
+                                    <li>SANS Foundations</li>
+                                    <li>&lsquo;Summer School&rsquo;, with <abbr title="Capture The Flag">CTF</abbr></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <h2 class="mt-5" id="Experience">Experience</h2>
+    <h2 class="mt-5" id="experience">Experience</h2>
     <div class="d-flex flex-wrap">
-
     </div>
-    
+
 {% endblock %}
