@@ -1,4 +1,3 @@
-import queue
 import socketserver
 import json
 import sys
