@@ -58,3 +58,7 @@ def disclaimer(request: HttpRequest):
 
 def teapot(_):
     return HttpResponse("I'm a teapot", status=418)
+
+
+def articles(request: HttpRequest):
+    return render(request, "articles.html")

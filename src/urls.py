@@ -28,5 +28,6 @@ urlpatterns = [
     path("robots.txt", basic.robots, name="robots"),
     path("email-disclaimer", basic.disclaimer, name="email-disclaimer"),
     path("teapot", basic.teapot, name="teapot"),
-    path("418", basic.teapot, name="418")
+    path("418", basic.teapot, name="418"),
+    path("articles", basic.articles, name="articles")
 ]

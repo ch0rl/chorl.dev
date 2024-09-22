@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}articles{% endblock %}
+
+{% block content %}
+    <h1 class="display-1">Articles</h1>
+
+    <div class="accordion" id="articles-accordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lo-article"
+                        aria-expanded="false" aria-controls="lo-article">
+                    Observations From Acting as a Legal Observer / Liaison
+                </button>
+            </h2>
+            <div id="lo-article" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#student-resources-article"
+                        aria-expanded="false" aria-controls="student-resources-article">
+                    Resources for Students, Based on my Experience
+                </button>
+            </h2>
+            <div id="student-resources-article" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul>
+                        <li>Take some time to familiarise yourself with your institution&lsquo;s complaints process, and don't be afraid to complain.</li>
+                        <li>
+                            For disabled students:
+                            <ul>
+                                <li>DisabilityRightsUK, &ldquo;<a href="https://www.disabilityrightsuk.org/resources/understanding-equality-act-information-disabled-students" target="_blank">Understanding the Equality Act: information for disabled students</a>&rdquo;.</li>
+                            </ul>
+                        </li>
+                        <li>OIA, &ldquo;<a href="https://www.oiahe.org.uk/about-us/reviewing-complaints/what-happens-when-a-student-complains-to-us/putting-things-right/" target="_blank">Putting Things Right</a>&rdquo;.</li>
+                        <li>OIA, &ldquo;<a href="https://www.oiahe.org.uk/resources-and-publications/case-summaries/" target="_blank">Case Summaries</a>&rdquo;.</li>
+                        <li>LexisNexis and Kris Robbetts &ldquo;<a href="https://www.lexisnexis.co.uk/legal/guidance/higher-education-student-contract" target="_blank">Higher education student contract</a>&rdquo;.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hrt-regret-article"
+                        aria-expanded="false" aria-controls="hrt-regret-article">
+                    Hormone Replacement Therapy Regret Rate
+                </button>
+            </h2>
+            <div id="hrt-regret-article" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <p>
+                        Roberts et al. found that 19% of transfeminine individuals did not continue Hormone Replacement Therapy (HRT) after four years.<sup><a href="#hrt-ref-a">a</a></sup>
+                        Turban et al. found that 13.1% of transgender people detransitioned.<sup><a href="#hrt-ref-b">b</a></sup>
+                        Of those who detransitioned, Turban et al. found that only 15.9% did so because of at least one internal factor.<sup><a href="#hrt-ref-c">c</a></sup>
+                    </p>
+
+                    <div id="hrt-regret-math">
+                        \begin{align}
+                            \text{let}\ S &amp;\ \text{be the event that one stops HRT within four years} \\
+                            \text{let}\ R &amp;\ \text{be the event that one truly regrets HRT} \\
+                            p(S|R) &amp;= 1 \\
+                            p(S) &amp;= \frac{0.19 + 0.131}{2} \\
+                            &amp;= 0.1605 \\
+                            p(R|S) &amp;= 0.159 \\
+                            p(R) &amp;= \frac{P(R|S) \cdot P(S)}{P(S|R)} \\
+                            &amp;= \frac{0.159 \cdot 0.1605}{1} \\
+                            &amp;= 0.0255195 \\
+                            &amp;\approx 2.55\%.
+                        \end{align}
+                    </div>
+
+                    <p>
+                        This would appear to put the true HRT regret rate at 2.55%, of those who start HRT. 
+                        Comparatively, Wilson, Ronnekleiv-Kelly, and Pawlik found that average patient regret rate is 14.4% – over 5.5 times greater.<sup><a href="#hrt-ref-d">d</a></sup>
+                    </p>
+                    
+                    <ul style="font-size: smaller">
+                        <li id="hrt-ref-a">[a] Christina M Roberts et al., &ldquo;Continuation of Gender-affirming Hormones Among Transgender Adolescents and Adults&rdquo;, The Journal of Clinical Endocrinology & Metabolism, 107/9 (Apr. 2022), e3937–e3943. doi: 10.1210/clinem/dgac251.</li>
+                        <li id="hrt-ref-b">[b] Jack L. Turban et al., &ldquo;Factors Leading to &ldquo;Detransition&rdquo; Among Transgender and Gender Diverse People in the United States: A Mixed-Methods Analysis&rdquo;, LGBT Health, 8/4 (2021), PMID: 33794108, 273–80. doi: 10.1089/lgbt.2020.0437.</li>
+                        <li id="hrt-ref-c">[c] Ibid.</li>
+                        <li id="hrt-ref-d">[d] Ana Wilson, Sean M Ronnekleiv-Kelly, and Timothy M Pawlik, &ldquo;Regret in surgical decision making: A systematic review of patient and physician perspectives&rdquo;, World J. Surg. 41/6 (June 2017), 1454–65.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#social-credit-article"
+                        aria-expanded="false" aria-controls="social-credit-article">
+                    Is Social Credit Any Different From Money?
+                </button>
+            </h2>
+            <div id="social-credit-article" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <p>
+                        
+                    </p>
+                    
+                    <ul style="font-size: smaller">
+                        <li>[a] Mac Síthigh, Daithí, and Siems, Mathias, “The Chinese Social Credit System: A Model for Other Countries?”, The Modern Law Review, 82/6 (2019), 1034–71. doi: 10.1111/1468-2230.12462.</li>
+                        <li>[b] Liu, Chuncheng, “Multiple Social Credit Systems in China”, Economic Sociology: The European Electronic Newsletter, 22/1 (2019), 22–32. doi: 10.2139/ssrn.3423057.</li>
+                        <li>[c] Liang, Fan, et al., “Constructing a Data-Driven Society: China’s Social Credit System as a State Surveillance Infrastructure”, Policy & Internet, 10/4 (2018), 415–53. doi: 10.1002/poi3.183.</li>
+                        <li>[d] Creemers, Rogier, China’s Social Credit System: An Evolving Practice of Control (May 9, 2018). doi: 10.2139/ssrn.3175792.</li>
+                        <li>[e] Yu, Lean, et al., “Social credit: a comprehensive literature review”, Financial Innovation, 1/1 (June 2015), 6. doi: 10.1186/s40854-015-0005-6.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        $(document).ready(function () {
+            if(location.hash != null && location.hash != ""){
+                $('.collapse').removeClass('in');
+                $(location.hash + '.collapse').collapse('show');
+            }
+        });
+        
+        const buttons = document.getElementsByClassName("accordion-button");
+        for (let i in [...Array(buttons.length).keys()]) {
+            buttons.item(i).onclick = function () {
+                if (buttons.item(i).attributes["aria-expanded"].nodeValue === "true") {
+                    window.location.hash = buttons.item(i).attributes["aria-controls"].nodeValue;
+                }
+            };
+        }
+    </script>
+{% endblock %}
