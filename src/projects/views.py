@@ -12,7 +12,18 @@ def index(request: HttpRequest):
 
 
 def kinks(request: HttpRequest):
-    return render(request, "projects/kinks.html")
+    # categories = [
+    #     {
+    #         "title": "Test",
+    #         "items": [
+    #             "a",
+    #             "b",
+    #             "abcsdeifjjkalf"
+    #         ]
+    #     }
+    # ]
+    # return render(request, "projects/kinks.html", {"categories": categories})
+    return HttpResponse("This doesn't exist yet... (sorry)", status=404, content_type="text/plain")
 
 
 def terminology(request: HttpRequest):
