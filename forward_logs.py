@@ -5,12 +5,6 @@ import os
 import psycopg2
 
 
-print(os.getenv("DB_HOST", "host.docker.internal"),
-      os.getenv("DB_NAME", "chorl-dev"),
-      os.getenv("DB_USER", "postgres"),
-      os.getenv("DB_PASS", ""), sep="\n", file=sys.stderr)
-
-
 class Handler(socketserver.BaseRequestHandler):
     db_host = os.getenv("DB_HOST", "host.docker.internal")
     db_name = os.getenv("DB_NAME", "chorl-dev")
