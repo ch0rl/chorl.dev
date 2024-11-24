@@ -62,3 +62,7 @@ def teapot(_):
 
 def articles(request: HttpRequest):
     return render(request, "articles.html")
+
+
+def privacy(request: HttpRequest):
+    return render(request, "privacy.html")

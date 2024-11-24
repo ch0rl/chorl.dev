@@ -29,5 +29,6 @@ urlpatterns = [
     path("email-disclaimer", basic.disclaimer, name="email-disclaimer"),
     path("teapot", basic.teapot, name="teapot"),
     path("418", basic.teapot, name="418"),
-    path("articles", basic.articles, name="articles")
+    path("articles", basic.articles, name="articles"),
+    path("privacy", basic.privacy, name="privacy"),
 ]

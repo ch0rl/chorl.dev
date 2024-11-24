@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}privacy{% endblock %}
+
+{% block content %}
+    <h1 class="display-1">Privacy Information</h1>
+
+    <p class="p-2">
+        All the following information can be deduced from this site&rsquo;s <a href="https://github.com/ch0rl/chorl.dev">source code</a>.
+    </p>
+
+    <p class="p-2">
+        When one makes a request to any resource under <code>www.chorl.dev</code>, the following are recorded; in general, see
+        <a href="http://nginx.org/en/docs/http/ngx_http_core_module.html#variables" target="_blank">Nginx: Module ngx_http_core_module, Variables</a>.
+    </p>
+    <ul>
+        <li>&ldquo;<code>$request_uri</code>&rdquo;: the path of the request.</li>
+        <li>&ldquo;<code>$remote_addr</code>&rdquo;: the internal IP address of the request.</li>
+        <li>&ldquo;<code>$time_iso8601</code>&rdquo;: the date and time of the request.</li>
+        <li>&ldquo;<code>$http_user_agent</code>&rdquo;: the client&rsquo;s user-agent.</li>
+        <li>&ldquo;<code>$uid_got</code>&rdquo; and &ldquo;<code>$uid_set</code>&rdquo;: the internal user-id of the client, for tracking sessions.</li>
+        <li>&ldquo;<code>$request</code>&rdquo;: the request line (i.e., &ldquo;<code>GET / HTTP/1.1</code>&rdquo;).</li>
+        <li>&ldquo;<code>$status</code>&rdquo;: the status of the request.</li>
+        <li>&ldquo;<code>$http_x_forwarded_for</code>&rdquo;: the original IP address of the request.</li>
+        <li>&ldquo;<code>$http_referer</code>&rdquo;: the value of the &ldquo;<code>referer</code>&rdquo; header.</li>
+    </ul>
+    
+    <p class="p-2">
+        This data is then forwarded to an external database and stored indefinitely.
+    </p>
+{% endblock %}
