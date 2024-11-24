@@ -77,9 +77,6 @@ WSGI_APPLICATION = 'src.wsgi.application'
 DB_NAME, DB_USER, DB_PASS, DB_HOST = (os.environ.get('DB_NAME', 'koyebdb'), os.environ.get('DB_USER', 'admin'),
                                       os.environ.get("DB_PASS", "postgres"), os.environ.get("DB_HOST", "localhost"))
 
-# DEBUG
-print(os.environ.items())
-
 if PROD:
     DATABASES = {
         'default': {
