@@ -27,7 +27,7 @@ class Handler(socketserver.BaseRequestHandler):
             self.to_db(data)
 
     def setup(self):
-        if len(Handler.queue) >= 20:
+        if len(Handler.queue) >= 5:
             conn = psycopg2.connect(
                 f"dbname={Handler.db_name} user={Handler.db_user} host={Handler.db_host} password={Handler.db_pass}")
             cur = conn.cursor()
