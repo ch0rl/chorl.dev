@@ -17,6 +17,7 @@ Including another URLconf
 
 from django.urls import path, include
 from .views import basic
+from .views import bots
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -31,4 +32,5 @@ urlpatterns = [
     path("418", basic.teapot, name="418"),
     path("articles", basic.articles, name="articles"),
     path("privacy", basic.privacy, name="privacy"),
+    path("bot", bots.invisible, name="bot-invisible")
 ]
