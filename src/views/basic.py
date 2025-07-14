@@ -27,7 +27,7 @@ def about(request: HttpRequest):
         ["Trans", "[Generally] someone who's gender assigned at birth does not align with their gender identity."],
         ["Non-binary", "Someone who's gender identity does not fit the typical binary of male/female."],
         ["Gender Fluid", "Someone who's gender identity is not constant."],
-        ["Republican (UK)", "Someone who does not agree with the notion of a monarch/monarchy."],
+        ["Republican (UK)", "Someone who rejects the notion of a monarch/monarchy."],
         ["Environmentalist", "Someone who advocates for the protection of the environment."],
         ["Activist", "Someone who partakes in activism."]
     ]
