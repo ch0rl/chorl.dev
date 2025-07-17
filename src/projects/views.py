@@ -71,3 +71,6 @@ def browser(request: HttpRequest):
     revealed = ...
 
     return render(request, "projects/browser.html", context={"in_req": in_req, "revealed": revealed})
+
+def trans(request: HttpRequest):
+    return render(request, "projects/trans.html")
