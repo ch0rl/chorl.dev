@@ -5,6 +5,7 @@
 
 {% block content %}
     <h1 class="display-1">Articles</h1>
+    <p>Note: this is not optimised for mobile / smaller screens.</p>
 
     <div class="accordion" id="articles-accordion">
         <div class="accordion-item">
@@ -261,11 +262,26 @@
                 </div>
             </div>
         </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#trans-arrest"
+                        aria-expanded="false" aria-controls="trans-arrest">
+                    Being Arrested as a Trans Person
+                </button>
+            </h2>
+            <div id="trans-arrest" class="accordion-collapse collapse">
+                <div class="accordion-body">
+
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
+        // Opens last opened article (based on # in url)
+
         $(document).ready(function () {
             if(location.hash != null && location.hash != ""){
                 $('.collapse').removeClass('in');
