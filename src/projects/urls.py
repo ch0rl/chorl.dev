@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import index, kinks, terminology, browser, terms_api
+from .views import index, kinks, terminology, browser, terms_api, trans
 
 urlpatterns = [
     path("", index, name="projects-index"),
@@ -7,4 +7,5 @@ urlpatterns = [
     path("terms", terminology, name="terms"),
     path("browser", browser, name="browser"),
     path("api/terms", terms_api, name="api-terms"),
+    path("trans", trans, name="trans")
 ]
