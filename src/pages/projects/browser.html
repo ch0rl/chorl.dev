@@ -107,7 +107,7 @@
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap-table.min.js' %}"></script>
     <script>
-        function fill_table() {
+        async function fill_table() {
             let local_storage = [];
             for (var i = 0; i < localStorage.length; i++){
                 local_storage.push([localStorage.key(i), localStorage.getItem(localStorage.key(i))].join(": "));
@@ -122,6 +122,22 @@
                 location = "n/a";
             }
 
+            let clipboard;
+            try {
+                await navigator.clipboard.read()
+            } catch (e) {
+                console.log(e);
+                clipboard = e.text;
+            }
+
+            let devices;
+            try {
+                await navigator.mediaDevices.enumerateDevices()
+            } catch (e) {
+                console.log(e);
+                devices = e.text;
+            }
+
             const data = [
                 ["Language", navigator.language],
                 ["Cookies", "<pre><code>[\n" + document.cookie.split(";").join(",\n") + "\n]</code></pre>"],
@@ -129,7 +145,8 @@
                 ["Screen Size", [screen.width, screen.height]],
                 ["Document Size", [document.width, document.height]],
                 ["Location", location],
-                ["Navigator", navigator]
+                ["Clipboard", clipboard],
+                ["Devices", devices]
             ];
             
             const $table = $("#cbr-table");
