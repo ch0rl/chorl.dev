@@ -3,26 +3,6 @@
 
 {% block extra_head %}
     <style>
-        .timeline {
-            padding: 10px
-        }
-
-        .timeline dt {
-
-        }
-
-        .timeline dt .date {
-
-        }
-
-        .timeline dt .date::after {
-            content: ":"
-        }
-
-        .timeline dt .source {
-
-        }
-
         blockquote {
             padding-left: 2em;
             text-align: justify;
@@ -34,180 +14,203 @@
             font-family: bootstrap-icons;
             font-size: x-large;
         }
-
-        blockquote .cite {
-            float: right;
-        }
     </style>
 {% endblock %}
 
 {% block title %}Trans Rights and the UK{% endblock %}
 
 {% block content %}
-<h1 class="accordion-header">
+<h1 class="pb-2">
     The UK&rsquo;s Failings on Trans Rights
 </h1>
 <p>The following takes two parts:</p>
 <ol>
     <li>the current international opinion on the rights of transgender, gender diverse, and gender non-confirming people, and</li>
-    <li>the <abbr title="United Kingdom of Great Britain and Northern Ireland">UK</abbr>&rsquo;s failings to meet this standard.</li>
+    <li>the UK&rsquo;s failings to meet this standard.</li>
 </ol>
 
 <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <button class="nav-link active" id="about-intl-tab" data-bs-toggle="tab" data-bs-target="#intl-tab"
-                type="button" role="tab" aria-controls="intl-tab" aria-selected="true">International Opinion</button>
+        <button class="nav-link active" id="about-intl-topics-tab" data-bs-toggle="tab" data-bs-target="#intl-topics-tab"
+                type="button" role="tab" aria-controls="intl-topics-tab" aria-selected="true">International Opinion:
+            Topics</button>
         <button class="nav-link" id="about-uk-tab" data-bs-toggle="tab" data-bs-target="#uk-tab"
                 type="button" role="tab" aria-controls="uk-tab" aria-selected="false">The UK&rsquo;s Failings</button>
     </div>
 </nav>
 
 <div class="tab-content" id="tab-content">
-    <div class="tab-pane fade show active p-2" id="intl-tab" role="tabpanel" aria-labelledby="about-intl-tab" tabindex="0">
-        <p>The following is a timeline of select quotes from different international publications.</p>
+    <div class="tab-pane fade show active p-2" id="intl-topics-tab" role="tabpanel" aria-labelledby="about-intl-topics-tab"
+         tabindex="0">
+        <div class="accordion" id="intl-topics-accordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-hrt"
+                            aria-expanded="false" aria-controls="intl-topics-hrt">
+                        Hormone Replacement Therapy
+                    </button>
+                </h2>
+                <div id="intl-topics-hrt" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-legal"
+                            aria-expanded="false" aria-controls="intl-topics-legal">
+                        Legal Gender Recognition
+                    </button>
+                </h2>
+                <div id="intl-topics-legal" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <p>
+                            As very succinctly put by the UN Independent Expert on protection against violence and discrimination based on sexual orientation and gender identity (IESOGI), in a letter to the government of the UK:<sup>[<a href="#ref-1" class="cite"></a>: p. 3]</sup>
+                        </p>
+                        <blockquote>
+                            gender identity must be recognised by law, and implemented under a standard of self-identification.
+                        </blockquote>
 
-        <dl class="timeline">
-            <dt id="trans-intl:CM2010-5">
-                <span class="date">31/03/2010</span>
-                <span class="source">
-                    <a href="https://search.coe.int/cm?i=09000016805cf40a" target="_blank">
-                        Recommendation of the Committee of Ministers to member states on measures to combat discrimination on grounds of sexual orientation or gender identity [CM/Rec(2010)5]
-                    </a>
-                </span>
-            </dt>
-            <dd x-related="trans-intl:CM2010-5">
-                <p>In the Appendix to this recommendation, the Committee of Ministers of the Council of Europe state that (select quotes):</p>
+                        <p>
+                            The United Nations High Commissioner for Human Rights goes into more detail, recommending that:<sup>[<a href="#ref-2" class="cite"></a>: p. 121]</sup>
+                        </p>
+                        <blockquote>
+                            states should provide a straightforward administrative process to officially recognize the self-identified gender identity and name of transgender persons through a simple declaration without such requirements as medical certification or diagnosis, surgery or medical treatment, divorce or sterilization.
+                            This process should include the ability to obtain new official documents reflecting self-identified gender, first name, gender marker and appearance. [...]
+                            Legislation should allow for recognition of non-binary gender identities.
+                            Minors should have access to recognition of their gender identity.
+                        </blockquote>
 
-                <blockquote>
-                    Member states should raise awareness among public authorities and public institutions at all levels of their responsibility to refrain from statements,
-                    in particular to the media, which may reasonably be understood as legitimising such hatred or discrimination.
-                    Public officials and other state representatives should be encouraged to promote tolerance and respect for the human rights of lesbian, gay, bisexual and transgender persons
-                    whenever they engage in a dialogue with key representatives of the civil society, including media and sports organisations, political organisations and religious communities.
-                    <span class="cite">[7-8]</span>
-                </blockquote>
+                        <p>This is supported in another of the IESOGI's reports:<sup>[<a href="#ref-5" class="cite"></a>: &para;21 and &para;23]</sup></p>
+                        <blockquote>
+                            Self-determined gender is a fundamental part of a person&rsquo;s free and autonomous choice in relation to roles, feelings, forms of expression and behaviours, and a corner stone of the person&rsquo;s identity.
+                            The resulting obligation of States is to provide access to gender recognition in a manner consistent with the rights to freedom from discrimination, equal protection of the law, privacy, identity and freedom of expression. [...]
+                            lack of legal recognition negates the identity of the concerned persons to such an extent that it provokes what can be described as a fundamental rupture of State obligations.
+                        </blockquote>
 
-                <blockquote>
-                    Member states should ensure that non-governmental organisations defending the human rights of lesbian, gay, bisexual and transgender persons
-                    are appropriately consulted on the adoption and implementation of measures that may have an impact on the human rights of these persons.
-                    <span class="cite">[12]</span>
-                </blockquote>
+                        <p>The IESOGI combats so-called &ldquo;gender-critical&rdquo; arguments (more below):<sup>[<a href="#ref-1" class="cite"></a>: p. 13]</sup></p>
+                        <blockquote>
+                            the human rights of trans women are not dependent on the hypothetical risk that predatory men could disguise themselves as such and perpetrate crime [...]
 
-                <blockquote>
-                    Public authorities at all levels should be encouraged to publicly condemn, notably in the media, any unlawful interferences with the right of individuals and groups of individuals
-                    to exercise their freedom of expression and peaceful assembly, notably when related to the human rights of lesbian, gay, bisexual and transgender persons.
-                    <span class="cite">[17]</span>
-                </blockquote>
+                            in the countries that have legal recognition of gender identity based on self-identification, there is no credible evidence to suggest systemic risk of predatory men using the process of identifying and living as a woman as an opportunity to perpetrate gender or sexual-based violence.
+                        </blockquote>
 
-                <blockquote>
-                    Prior requirements, including changes of a physical nature, for legal recognition of a gender reassignment, should be regularly reviewed in order to remove abusive requirements.
-                    Member states should take appropriate measures to guarantee the full legal recognition of a person’s gender reassignment in all areas of life, in particular by making possible the change
-                    of name and gender in official documents in a quick, transparent and accessible way; member states should also ensure, where appropriate,
-                    the corresponding recognition and changes by non-state actors with respect to key documents, such as educational or work certificates.
-                    <span class="cite">[20-21]</span>
-                </blockquote>
+                        <p>These opinions are not restricted to the UN either; the Parliamentary Assembly of the Council of Europe called on states to:<sup>[<a href="#ref-6" class="cite"></a>: &para;6.2]</sup></p>
+                        <blockquote>
+                            develop quick, transparent and accessible procedures, based on self-determination, for changing the name and registered sex of transgender people on birth certificates, identity cards, passports, educational certificates and other similar documents; make these procedures available for all people who seek to use them, irrespective of age, medical status, financial situation or police record; <br>
+                            abolish sterilisation and other compulsory medical treatment, as well as a mental health diagnosis, as a necessary legal requirement to recognise a person’s gender identity in laws regulating the procedure for changing a name and registered gender; [...]<br>
+                            consider including a third gender option in identity documents for those who seek it;
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-gc"
+                            aria-expanded="false" aria-controls="intl-topics-gc">
+                        &ldquo;Gender Critical&rdquo; Arguments
+                    </button>
+                </h2>
+                <div id="intl-topics-gc" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <p>In another of their publications, the IESOGI comments that:<sup>[<a href="#ref-4" class="cite"></a>: p. 6]</sup></p>
+                        <blockquote>
+                            the notion of &ldquo;gender ideology&rdquo; was created by religious leaders to halt advances regarding women&rsquo;s empowerment
+                        </blockquote>
+                        <p>and:</p>
+                        <blockquote>
+                            there is no justification to defend a system of oppression to the detriment of the individual; on the contrary, there is a moral imperative to defend the individual&rsquo;s freedom from violence and discrimination.
+                            States have before them an urgent duty to establish legal gender recognition based on self-determination - while they fail to do so, they continue to enable much human rights abuse around the world.
+                        </blockquote>
 
-                <blockquote>
-                    Member states should take appropriate legislative and other measures to ensure that the highest attainable standard of health can be effectively enjoyed without discrimination
-                    on grounds of sexual orientation or gender identity; in particular, they should take into account the specific needs of lesbian, gay, bisexual and transgender persons in the
-                    development of national health plans including suicide prevention measures, health surveys, medical curricula, training courses and materials, and when monitoring and evaluating the quality of health-care services.
-                    Member states should take appropriate measures to ensure that transgender persons have effective access to appropriate gender reassignment services, including psychological,
-                    endocrinological and surgical expertise in the field of transgender health care, without being subject to unreasonable requirements; no person should be subjected to gender reassignment procedures without his or her consent.
-                    <span class="cite">[33,35]</span>
-                </blockquote>
-            </dd>
+                        <p>The EU supports this, saying:</p>
+                        <blockquote>
+                            gender-critical movements [...] ignore the fundamental human rights issues at stake – the fight for recognition and equal rights – and wrongly characterise efforts to deconstruct deeply harmful gender stereotypes in our societies as so-called &ldquo;gender ideology&rdquo;.
+                        </blockquote>
 
-            <dt id="trans-intl:res2048-2015">
-                <span class="date">22/05/2015</span>
-                <span class="source">
-                    <a href="https://assembly.coe.int/nw/xml/XRef/Xref-XML2HTML-EN.asp?fileid=21736" target="_blank">
-                        Discrimination against transgender people in Europe [Resolution 2048 (2015)]
-                    </a>
-                </span>
-            </dt>
-            <dd x-related="trans-intl:res2048-2015">
-                <p>The Parliamentary Assembly of the Coucil of Europe called on states to (select quotes):</p>
-
-                <blockquote>
-                    involve and consult transgender people and their organisations when drafting and implementing policy and legal measures which concern them
-                    <span class="cite">[6.1.6]</span>
-                </blockquote>
-
-                <blockquote>
-                    develop quick, transparent and accessible procedures, based on self-determination, for changing the name and registered sex of transgender people on
-                    birth certificates, identity cards, passports, educational certificates and other similar documents; make these procedures available for all people who seek to use them,
-                    irrespective of age, medical status, financial situation or police record;
-                    abolish sterilisation and other compulsory medical treatment, as well as a mental health diagnosis, as a necessary legal requirement to recognise a person&rsquo;s gender identity
-                    in laws regulating the procedure for changing a name and registered gender;
-                    consider including a third gender option in identity documents for those who seek it;
-                    <span class="cite">[6.2.1-2,4]</span>
-                </blockquote>
-
-                <blockquote>
-                    make gender reassignment procedures, such as hormone treatment, surgery and psychological support, accessible for transgender people, and ensure that they are reimbursed by public health insurance schemes
-                    <span class="cite">[6.3.1]</span>
-                </blockquote>
-            </dd>
-
-            <dt id="trans-intl:living-free-eq">
-                <span class="date">??/10/2016</span>
-                <span class="source">
-                    <a href="https://www.ohchr.org/sites/default/files/Documents/Publications/LivingFreeAndEqual.pdf" target="_blank">
-                        Living Free and Equal [HR/PUB/16/3]
-                    </a>
-                </span>
-            </dt>
-            <dd x-related="trans-intl:living-free-eq">
-                <p>The United Nations High Commissioner for Human Rights, Zeid Ra&rsquo;ad Al Hussein, recommended that states (select quotes):</p>
-
-                <blockquote>
-                    provide a straightforward administrative process to officially recognize the self-identified gender identity and name of transgender persons through a
-                    simple declaration without such requirements as medical certification or diagnosis, surgery or medical treatment, divorce or sterilization. [...]
-                    Legislation should allow for recognition of non-binary gender identities. Minors should have access to recognition of their gender identity.
-                    <span class="cite">[p. 121]</span>
-                </blockquote>
-
-                <blockquote>
-                    establish clear policies and guidelines to protect LGBT and intersex people from violence and discrimination in detention settings,
-                    in line with international human rights law standards, including with regard to arrest and police custody, interrogations, allocation,
-                    searches, protection from inmate violence, isolation and solitary confinement as protective measures, and access to services and benefits.
-                    [...]
-                    Allocation and treatment of transgender detainees should be made on the basis of the detainee’s self-identified gender – not birth sex, gender markers on
-                    official documents, surgery, medical treatment or diagnostic. Decisions on allocation should be made on a case-by-case basis,
-                    in consultation with the detainee. Officials should use the name and pronouns preferred by the detainee. Transgender detainees should be free to
-                    express their self-identified gender, including through their choice of clothing. They should be able to choose the gender of officers
-                    carrying out any searches, including on specific body parts. Good practice includes establishing a specific care plan that encompasses all aspects
-                    of life in detention, including access to gender-affirming treatment and other health services related to the specific health needs of transgender detainees.
-                    <span class="cite">[p. 128]</span>
-                </blockquote>
-            </dd>
-
-            <dt id="trans-intl:coe2025">
-                <span class="date">08/07/2025</span>
-                <span class="source">
-                    <a href="https://www.coe.int/en/web/commissioner/-/united-kingdom-tackling-poverty-is-crucial-to-protect-children-s-human-rights-a-number-of-other-areas-also-call-for-attention" target="_blank">
-                        United Kingdom: tackling poverty is crucial to protect children&rsquo;s human rights; a number of other areas also call for attention
-                    </a>
-                </span>
-            </dt>
-            <dd x-related="trans-intl:coe2025">
-                <p>
-                    Following his visit to the UK, the Council of Europe Commissioner for Human Rights, Michael O&rsquo;Flaherty,
-                    expressed his &ldquo;[concern] about the current climate for trans people&rdquo;.
-                    He said:
-                </p>
-
-                <blockquote>
-                    Although they constitute a very small proportion of the population, and face acute marginalisation across all areas of life, trans people have been subject to intense political and public debate and scrutiny, including in the wake of the Supreme Court&rsquo;s judgment in <i>For Women Scotland Ltd. v. The Scottish Ministers</i>.
-                    He observes a tendency to see the human rights of different groups as a zero-sum game, when in reality any tensions will likely be exceptional; nuanced, reasonable and balanced accommodations can be found.
-                    He deplores that discussions tend towards the exclusion of trans people from many aspects of society, rather than ensuring that their inclusion and dignity are upheld.
-                    The Commissioner reiterates that all relevant legal or policy developments must be human rights-compliant, including in view of the case law of the European Court of Human Rights and other international instruments.
-                </blockquote>
-            </dd>
-        </dl>
+                        <p>Being even more explicit:</p>
+                        <blockquote>
+                            these movements [...] directly [violate] women&rsquo;s, children&rsquo;s and LGBTI people&rsquo;s human rights.
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-spaces"
+                            aria-expanded="false" aria-controls="intl-topics-spaces">
+                        &ldquo;Single-Sex&rdquo; Spaces
+                    </button>
+                </h2>
+                <div id="intl-topics-spaces" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-prisons"
+                            aria-expanded="false" aria-controls="intl-topics-prisons">
+                        Prisons
+                    </button>
+                </h2>
+                <div id="intl-topics-prisons" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-refs"
+                            aria-expanded="true" aria-controls="intl-topics-refs">
+                        References
+                    </button>
+                </h2>
+                <div id="intl-topics-refs" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <ol id="refs">
+                            <li id="ref-1">
+                                IESOGI, <a href="https://spcommreports.ohchr.org/TMResultsBase/DownLoadPublicCommunicationFile?gId=27757" target="_blank">&ldquo;Mandate of the Independent Expert on protection against violence and discrimination based on sexual orientation and gender identity&rdquo;</a> (OL GBR 15/2022, 13 December 2022).
+                            </li>
+                            <li id="ref-2">
+                                United Nations High Commissioner for Human Rights, <a href="https://www.ohchr.org/sites/default/files/Documents/Publications/LivingFreeAndEqual.pdf" target="_blank">&ldquo;Living Free and Equal&rdquo;</a> (October 2016).
+                            </li>
+                            <li id="ref-3">
+                                Lemkin Institute, <a href="https://www.lemkininstitute.com/red-flag-alerts/red-flag-alert-on-anti-trans-and-intersex-rights-in-the-uk" target="_blank">&ldquo;Red Flag Alert on Anti-Trans and Intersex Rights in the UK&rdquo;</a> (30 June 2025).
+                            </li>
+                            <li id="ref-4">
+                                IESOGI, <a href="https://www.ohchr.org/sites/default/files/Documents/Issues/SexualOrientation/IESOGI/Reports_on_Gender_Final_Summary.pdf" target="_blank">&ldquo;Reports on Gender: The Law of Inclusion &amp; Practices of Exclusion&rdquo;</a>.
+                            </li>
+                            <li id="ref-5">
+                                IESOGI, <a href="https://docs.un.org/en/A/73/152" target="_blank">&ldquo;Protection against violence and discrimination based on sexual orientation and gender identity&rdquo;</a> (A/73/152, 12 July 2018).
+                            </li>
+                            <li id="ref-6">
+                                Parliamentary Assembly Resolution 2048 (2015) <a href="https://assembly.coe.int/nw/xml/XRef/Xref-XML2HTML-EN.asp?fileid=21736" target="_blank">&ldquo;Discrimination against transgender people in Europe&rdquo;</a> (adopted 22 April 2015).
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="tab-pane fade show p-2" id="uk-tab" role="tabpanel" aria-labelledby="about-uk-tab" tabindex="0">
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        {#                        <p>In this vien, the Lemkin Institute recently published a &ldquo;Red Flag Alert on Anti-Trans and Intersex Rights&rdquo;,<sup>[<a href="#ref-3">3</a>]</sup> specifically noting that the situation in the UK &ldquo;[fits] neatly into the 9th Pattern of Genocide: &ldquo;Denial and/or Prevention of Identity&rdquo;&rdquo;.</p> #}
     </div>
 </div>
+
+<script>
+    let ref_lookup = {};
+    let all_refs = document.querySelectorAll("#refs li");
+    for (let i = 0; i < all_refs.length; i++) {
+        ref_lookup[all_refs[i].id] = i + 1;
+    }
+
+    for (let e of document.getElementsByClassName("cite")) {
+        e.innerText = ref_lookup[e.href.substring(e.href.indexOf("#") + 1)];
+    }
+</script>
 {% endblock %}
