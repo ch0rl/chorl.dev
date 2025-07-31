@@ -31,17 +31,13 @@
 
 <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <button class="nav-link active" id="about-intl-topics-tab" data-bs-toggle="tab" data-bs-target="#intl-topics-tab"
-                type="button" role="tab" aria-controls="intl-topics-tab" aria-selected="true">International Opinion:
-            Topics</button>
-        <button class="nav-link" id="about-uk-tab" data-bs-toggle="tab" data-bs-target="#uk-tab"
-                type="button" role="tab" aria-controls="uk-tab" aria-selected="false">The UK&rsquo;s Failings</button>
+        <button class="nav-link active" id="about-intl-topics-tab" data-bs-toggle="tab" data-bs-target="#intl-topics-tab" type="button" role="tab" aria-controls="intl-topics-tab" aria-selected="true" onclick="open_main('about-intl-topics-tab')">International Opinion: Topics</button>
+        <button class="nav-link" id="about-uk-tab" data-bs-toggle="tab" data-bs-target="#uk-tab" type="button" role="tab" aria-controls="uk-tab" aria-selected="false"  onclick="open_main('about-uk-tab')">The UK&rsquo;s Failings</button>
     </div>
 </nav>
 
 <div class="tab-content" id="tab-content">
-    <div class="tab-pane fade show active p-2" id="intl-topics-tab" role="tabpanel" aria-labelledby="about-intl-topics-tab"
-         tabindex="0">
+    <div class="tab-pane fade show active p-2" id="intl-topics-tab" role="tabpanel" aria-labelledby="about-intl-topics-tab" tabindex="0">
         <div class="accordion" id="intl-topics-accordion">
             <div class="accordion-item">
                 <h2 class="accordion-header">
@@ -174,68 +170,144 @@
     <div class="tab-pane fade show p-2" id="uk-tab" role="tabpanel" aria-labelledby="about-uk-tab" tabindex="0">
         {#                        <p>In this vien, the Lemkin Institute recently published a &ldquo;Red Flag Alert on Anti-Trans and Intersex Rights&rdquo;,<sup>[<a href="#ref:lemkin:red-flag">3</a>]</sup> specifically noting that the situation in the UK &ldquo;[fits] neatly into the 9th Pattern of Genocide: &ldquo;Denial and/or Prevention of Identity&rdquo;&rdquo;.</p> #}
 
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-hrt"
-                        aria-expanded="false" aria-controls="intl-topics-hrt">
-                    Hormone Replacement Therapy
-                </button>
-            </h2>
-            <div id="intl-topics-hrt" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                    Lorem ipsum dolor sit amet
+        <div class="accordion" id="uk-topics-accordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-hrt"
+                            aria-expanded="false" aria-controls="uk-topics-hrt">
+                        Hormone Replacement Therapy
+                    </button>
+                </h2>
+                <div id="uk-topics-hrt" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-legal"
-                        aria-expanded="false" aria-controls="intl-topics-legal">
-                    Legal Gender Recognition
-                </button>
-            </h2>
-            <div id="intl-topics-legal" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                    Lorem ipsum dolor sit amet
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-legal"
+                            aria-expanded="false" aria-controls="uk-topics-legal">
+                        Legal Gender Recognition
+                    </button>
+                </h2>
+                <div id="uk-topics-legal" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <h3>UK Policy</h3>
+                        <p>
+                            UK law recognises gender through a person&rsquo;s &ldquo;legal sex&rdquo;, which is either male or female, and can be &ldquo;modified&rdquo; for most purposes by a Gender Recognition Certificate (GRC).
+                        </p>
+
+                        <h4>GRC Process</h4>
+                        <p>To apply for a GRC, you must:<sup>[<a href="#ref:grc-guidance" class="cite"></a>, <a href="#ref:gra04" class="cite"></a>: &sect;2]</sup></p>
+                        <ul>
+                            <li>Be at least 18,</li>
+                            <li>Have transitioned from male to female, or female to male,</li>
+                            <li>Be diagnosed with gender dysphoria, and</li>
+                            <li>Have been living in your gender for at least 2 years.</li>
+                        </ul>
+
+                        <p>You must also provide:</p>
+                        <ul>
+                            <li>A <abbr title="A declaration signed by a qualified professional.">statutory declaration</abbr>, stating that the above are true, the sex you have transitioned to, the date on which you transitioned, whether you are married or in a civil partnership, and details thereof,</li>
+                            <li>Your certified birth/adoption certificate,</li>
+                            <li>Evidence of name changes, where you have changed your name,</li>
+                            <li>Evidence that you&rsquo;ve lived in your affirmed gender for the last 2 years,</li>
+                            <li>
+                                Two medical reports, one being written by an expert in gender identity and specifying:
+                                <ul>
+                                    <li>Your diagnosis of gender dysphoria,</li>
+                                    <li>The reasons for this diagnosis.</li>
+                                </ul>
+                                Either of the reports must also specify any/all gender-affirming treatment you have had and plan to have.
+                            </li>
+                        </ul>
+
+                        <h4><i>For Women Scotland v The Scottish Ministers</i> [2025] UKSC 16</h4>
+                        <p>The UK Supreme Court, in <i>For Women Scotland v The Scottish Ministers</i>, decided that:</p>
+                        <ol>
+                            <li>&ldquo;Sex&rdquo;, in the Equality Act 2010, refers to one&rsquo;s sex assigned at birth, and is not modified by a GRC, and</li>
+                            <li>The disapplication of the Gender Recognition Act 2004, by virtue of subsection 9(3)(1) of that Act, does not need to be explicit.</li>
+                        </ol>
+                        <p>This change in legislative interpretation removed trans people&rsquo;s right to access single-sex spaces and enforced a discriminatory, reductive, definition of sex in law.</p>
+
+                        <h3>Compared to International Opinion</h3>
+
+                        <h4>Self-ID</h4>
+                        <p>The UK does not operate on a system of self-identification; on 19 March 2025, the Government said:<sup>[<a href="#ref:petition:self-id" class="cite"></a>]</sup></p>
+                        <blockquote>
+                            The Gender Recognition Act 2004 is a robust piece of legislation that reflects the seriousness of changing a person&rsquo;s legal gender.
+                            The Government will not be introducing self-identification.
+                        </blockquote>
+                        <p>This is at odds to the international opinion that:<sup>[<a href="#ref:iesogi:uk" class="cite"></a>: p. 3]</sup></p>
+                        <blockquote>
+                            gender identity must be recognised by law, and implemented under a standard of self-identification
+                        </blockquote>
+                        <p>This was most recently recommended to the UK by the IESOGI on 11 April 2024:<sup>[<a href="#ref:iesogi:uk2" class="cite"></a>: p. 17]</sup></p>
+                        <blockquote>
+                            [The UK should] simplify the administrative process of legal recognition of gender identity, in accordance with internationally recognized good practices of legal recognition of gender identity based on self-determination by the applicant, without abusive requirements, including for non-binary persons and children;
+                        </blockquote>
+
+                        <h4>Medical Requirements</h4>
+                        <p>
+                            A system of self-identification would necessarily do without any medical requirement; it is still interesting to interrogate on its own.
+                            On 19 March 2025, the Government said (my emphasis):<sup>[<a href="#ref:petition:self-id" class="cite"></a>]</sup>
+                        </p>
+                        <blockquote>
+                            The Government is committed to modernising, simplifying and reforming the legal gender recognition process to remove indignities for trans people <strong>whilst retaining the need for a diagnosis of gender dysphoria</strong>.
+                        </blockquote>
+                        <p>However, it was previously recommended by the House of Commons' Women and Equalities Committee that:<sup>[<a href="#ref:wec:reform-gra" class="cite"></a>: &para;97]</sup></p>
+                        <blockquote>
+                            The Government should remove the diagnosis of gender dysphoria from the Gender Recognition Act by 2023, reflecting the support for this in responses to its own consultation.
+                        </blockquote>
+                        <p>This is supported by a vast array of international resources listed prior.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-gc"
-                        aria-expanded="false" aria-controls="intl-topics-gc">
-                    &ldquo;Gender Critical&rdquo; Arguments
-                </button>
-            </h2>
-            <div id="intl-topics-gc" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                    Lorem ipsum dolor sit amet
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-gc"
+                            aria-expanded="false" aria-controls="uk-topics-gc">
+                        &ldquo;Gender Critical&rdquo; Arguments
+                    </button>
+                </h2>
+                <div id="uk-topics-gc" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-spaces"
-                        aria-expanded="false" aria-controls="intl-topics-spaces">
-                    &ldquo;Single-Sex&rdquo; Spaces
-                </button>
-            </h2>
-            <div id="intl-topics-spaces" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                    Lorem ipsum dolor sit amet
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-spaces"
+                            aria-expanded="false" aria-controls="uk-topics-spaces">
+                        &ldquo;Single-Sex&rdquo; Spaces
+                    </button>
+                </h2>
+                <div id="uk-topics-spaces" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-prisons"
-                        aria-expanded="false" aria-controls="intl-topics-prisons">
-                    Prisons
-                </button>
-            </h2>
-            <div id="intl-topics-prisons" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                    Lorem ipsum dolor sit amet
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-prisons"
+                            aria-expanded="false" aria-controls="uk-topics-prisons">
+                        Prisons
+                    </button>
+                </h2>
+                <div id="uk-topics-prisons" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <h3>UK Policy</h3>
+
+                        <p>
+                            Current UK policy houses trans men in line with their &ldquo;legal&rdquo; gender (as modified by a Gender Recognition Certificate<sup>[<a href="#ref:psi:trans" class="cite"></a>: p. 9]</sup>).
+                            Trans women, however, can only be housed in the women&rsquo;s estate if they have no history of sexual or violent offending, no birth genitalia, and a Gender Recognition Certificate.<sup>[<a href="#ref:psi:trans-diagram" class="cite"></a>]</sup>
+                        </p>
+
+                        <img src="{% static 'images/2024_11_14_Annex_A_-_Transgender_Prisoners_-_Initial_Allocation_Process_Map.pdf.png' %}" alt="A flowchart explaining the placement of transgender prisoners in the UK" width="60%" class="p-3" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -264,10 +336,32 @@
         <li id="ref:eu:combatting:C">
             Fourat Ben Chikha, explanatory memorandum to <a href="https://pace.coe.int/en/files/29712/html" target="_blank">&ldquo;Combating rising hate against LGBTI people in Europe&rdquo;</a> (Committee on Equality and Non-Discrimination, Doc. 15425, 17 December 2021).
         </li>
+        <li id="ref:psi:trans">
+            Ministry of Justice and HM Prison and Probation Service,<a href="https://www.gov.uk/government/publications/the-care-and-management-of-individuals-who-are-transgender" target="_blank">&ldquo;The care and management of individuals who are transgender&rdquo;</a> (updated 14 November 2024).
+        </li>
+        <li id="ref:psi:trans-diagram">
+            Ministry of Justice and HM Prison and Probation Service, Annex A to <a href="https://www.gov.uk/government/publications/the-care-and-management-of-individuals-who-are-transgender" target="_blank">&ldquo;The care and management of individuals who are transgender&rdquo;</a> (updated 14 November 2024).
+        </li>
+        <li id="ref:grc-guidance">
+            Gov.uk, <a href="https://www.gov.uk/apply-gender-recognition-certificate/what-documents-you-need" target="_blank">&ldquo;Apply for a Gender Recognition Certificate: What documents you need&rdquo;</a>.
+        </li>
+        <li id="ref:gra04">
+            Gender Recognition Act 2004.
+        </li>
+        <li id="ref:petition:self-id">
+            <a href="https://petition.parliament.uk/petitions/701159" target="_blank">&ldquo;Allow transgender people to self-identify their legal gender&rdquo;</a> (UK Government and Parliament Petitions).
+        </li>
+        <li id="ref:iesogi:uk2">
+            IESOGI, <a href="https://docs.un.org/en/A/HRC/56/49/ADD.1" target="_blank">&ldquo;Visit to the United Kingdom of Great Britain and Northern Ireland&rdquo;</a> (A/HRC/56/49/Add.1, 11 April 2024).
+        </li>
+        <li id="ref:wec:reform-gra">
+            Women and Equalities Committee, <a href="https://committees.parliament.uk/publications/8329/documents/84728/default/" target="_blank">&ldquo;Reform of the Gender Recognition Act&rdquo;</a> (House of Commons, HC 977, 15 December 2021).
+        </li>
     </ol>
 </div>
 
 <script>
+    /* Auto-number all citations */
     let ref_lookup = {};
     let all_refs = document.querySelectorAll("#refs li");
     for (let i = 0; i < all_refs.length; i++) {
@@ -277,5 +371,39 @@
     for (let e of document.getElementsByClassName("cite")) {
         e.innerText = ref_lookup[e.href.substring(e.href.indexOf("#") + 1)];
     }
+</script>
+<script>
+    {% comment %}
+    /* Check for last opened */
+    let opened_main = localStorage.getItem("opened-main");
+    if (opened_main != null) {
+        document.getElementById(opened_main).click();
+    }
+
+    let opened_sub = localStorage.getItem("opened-sub");
+    if (opened_sub != null) {
+        for (let i of opened_sub) {
+            if (i === true) {
+                document.getElementById(i).click();
+            }
+        }
+    }
+
+    /* Establish hooks */
+    function open_main(id) {
+        localStorage.setItem("opened-main", id);
+    }
+
+    function toggle_sub(id) {
+        let sub_states = localStorage.getItem("opened-sub");
+        if (sub_states == null ) sub_states = {};
+        sub_states[id] = sub_states[id] !== true;
+        localStorage.setItem("opened-sub", sub_states);
+    }
+
+    for (let e of document.getElementsByClassName("accordion-button")) {
+        e.onclick = () => { toggle_sub(e.id) };
+    }
+    {% endcomment %}
 </script>
 {% endblock %}
