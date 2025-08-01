@@ -41,7 +41,7 @@
         <div class="accordion" id="intl-topics-accordion">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-hrt"
+                    <button id="intl:hrt:btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-hrt"
                             aria-expanded="false" aria-controls="intl-topics-hrt">
                         Hormone Replacement Therapy
                     </button>
@@ -54,7 +54,7 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-legal"
+                    <button id="intl:legal:btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-legal"
                             aria-expanded="false" aria-controls="intl-topics-legal">
                         Legal Gender Recognition
                     </button>
@@ -109,7 +109,7 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-gc"
+                    <button id="intl:gc:btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-gc"
                             aria-expanded="false" aria-controls="intl-topics-gc">
                         &ldquo;Gender Critical&rdquo; Arguments
                     </button>
@@ -140,7 +140,7 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-spaces"
+                    <button id="intl:ss:btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-spaces"
                             aria-expanded="false" aria-controls="intl-topics-spaces">
                         &ldquo;Single-Sex&rdquo; Spaces
                     </button>
@@ -153,7 +153,7 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-prisons"
+                    <button id="intl:prisons:btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#intl-topics-prisons"
                             aria-expanded="false" aria-controls="intl-topics-prisons">
                         Prisons
                     </button>
@@ -173,7 +173,7 @@
         <div class="accordion" id="uk-topics-accordion">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-hrt"
+                    <button id="uk:hrt:btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-hrt"
                             aria-expanded="false" aria-controls="uk-topics-hrt">
                         Hormone Replacement Therapy
                     </button>
@@ -186,7 +186,7 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-legal"
+                    <button id="uk:legal:btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-legal"
                             aria-expanded="false" aria-controls="uk-topics-legal">
                         Legal Gender Recognition
                     </button>
@@ -250,7 +250,7 @@
 
                         <h4>Medical Requirements</h4>
                         <p>
-                            A system of self-identification would necessarily do without any medical requirement; it is still interesting to interrogate on its own.
+                            A system of self-identification would necessarily do without any medical requirement, but it is still interesting to interrogate on its own.
                             On 19 March 2025, the Government said (my emphasis):<sup>[<a href="#ref:petition:self-id" class="cite"></a>]</sup>
                         </p>
                         <blockquote>
@@ -266,7 +266,7 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-gc"
+                    <button id="uk:gc:btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-gc"
                             aria-expanded="false" aria-controls="uk-topics-gc">
                         &ldquo;Gender Critical&rdquo; Arguments
                     </button>
@@ -279,7 +279,7 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-spaces"
+                    <button id="uk:ss:btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-spaces"
                             aria-expanded="false" aria-controls="uk-topics-spaces">
                         &ldquo;Single-Sex&rdquo; Spaces
                     </button>
@@ -292,7 +292,7 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-prisons"
+                    <button id="uk:prisons:btn" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uk-topics-prisons"
                             aria-expanded="false" aria-controls="uk-topics-prisons">
                         Prisons
                     </button>
@@ -373,37 +373,78 @@
     }
 </script>
 <script>
-    {% comment %}
-    /* Check for last opened */
-    let opened_main = localStorage.getItem("opened-main");
-    if (opened_main != null) {
-        document.getElementById(opened_main).click();
+    /* Load or init state */
+    let _state = localStorage.getItem("trans:state");
+    let state = {
+        subs: {}
     }
-
-    let opened_sub = localStorage.getItem("opened-sub");
-    if (opened_sub != null) {
-        for (let i of opened_sub) {
-            if (i === true) {
-                document.getElementById(i).click();
-            }
+    if (_state != null) {
+        try {
+            state = JSON.parse(_state);
+        } catch (e) {
+            console.log(e);
         }
     }
 
-    /* Establish hooks */
-    function open_main(id) {
-        localStorage.setItem("opened-main", id);
+    /* State handling functions */
+    function save_state () {
+        localStorage.setItem("trans:state", JSON.stringify(state));
+    }
+
+    function change_main(to) {
+        state.main = to;
+        save_state();
     }
 
     function toggle_sub(id) {
-        let sub_states = localStorage.getItem("opened-sub");
-        if (sub_states == null ) sub_states = {};
-        sub_states[id] = sub_states[id] !== true;
-        localStorage.setItem("opened-sub", sub_states);
+        if (state.subs.hasOwnProperty(id)) {
+            state.subs[id] = !state.subs[id];
+        } else {
+            // Assume false by default, therefore toggle to open
+            state.subs[id] = true;
+        }
+
+        save_state();
     }
 
-    for (let e of document.getElementsByClassName("accordion-button")) {
-        e.onclick = () => { toggle_sub(e.id) };
+    /* Set main - only bother with uk tab */
+    if (state.hasOwnProperty("main") && state.main == "about-uk-tab") {
+        // Buttons
+        let intl = document.getElementById("about-intl-topics-tab");
+        intl.classList.remove("active");
+        intl.ariaSelected = "false";
+
+        let uk = document.getElementById("about-uk-tab");
+        uk.classList.add("active");
+        uk.ariaSelected = "true";
+
+        // Tabs
+        let intl_tab = document.getElementById("intl-topics-tab");
+        intl_tab.classList.remove("active", "show");
+
+        let uk_tab = document.getElementById("uk-tab");
+        uk_tab.classList.add("active", "show");
     }
-    {% endcomment %}
+
+    /* Set subs */
+    for (let [e, v] of Object.entries(state.subs)) {
+        if (v) {
+            let elem = document.getElementById(e);
+
+            elem.classList.remove("collapsed")
+            elem.ariaExpanded = "true";
+
+            document.getElementById(elem.getAttribute("aria-controls")).classList.add("show");
+        }
+    }
+
+    /* Setup hooks */
+    function open_main(id) { change_main(id) }
+
+    for (let e of document.getElementsByClassName("accordion-button")) {
+        e.addEventListener("click", (e) => {
+            toggle_sub(e.target.id)
+        })
+    }
 </script>
 {% endblock %}
