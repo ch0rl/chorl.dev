@@ -77,3 +77,9 @@ def trans(request: HttpRequest):
         "WPATH": '<abbr title="World Professional Association for Transgender Health">WPATH</abbr>',
         "IESOGI": '<abbr title="Independent Expert on protection against violence and discrimination based on Sexual Orientation and Gender Identity">IESOGI</abbr>'
     })
+
+def trans_dhsc(request: HttpRequest):
+    return render(request, "projects/trans/dhsc-email.html")
+
+def trans_ehrc(request: HttpRequest):
+    return render(request, "projects/trans/ehrc-email.html")
