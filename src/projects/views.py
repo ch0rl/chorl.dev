@@ -73,4 +73,7 @@ def browser(request: HttpRequest):
     return render(request, "projects/browser.html", context={"in_req": in_req, "revealed": revealed})
 
 def trans(request: HttpRequest):
-    return render(request, "projects/trans.html")
+    return render(request, "projects/trans.html", context={
+        "WPATH": '<abbr title="World Professional Association for Transgender Health">WPATH</abbr>',
+        "IESOGI": '<abbr title="Independent Expert on protection against violence and discrimination based on Sexual Orientation and Gender Identity">IESOGI</abbr>'
+    })
