@@ -1,5 +1,5 @@
-from django.urls import path, include
-from .views import index, kinks, terminology, browser, terms_api, trans, trans_dhsc, trans_ehrc
+from django.urls import path
+from .views import index, terminology, browser, terms_api, trans, trans_dhsc, trans_ehrc
 
 urlpatterns = [
     path("", index, name="projects-index"),

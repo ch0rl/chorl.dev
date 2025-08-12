@@ -25,7 +25,7 @@ urlpatterns = [
     path("contact", basic.contact, name="contact"),
     path("about", basic.about, name="about"),
     path("credits", basic.credits, name="credits"),
-    path("projects/", include("main.projects.urls")),
+    path("projects/", include("projects.urls")),
     path("robots.txt", basic.robots, name="robots"),
     path("email-disclaimer", basic.disclaimer, name="email-disclaimer"),
     path("teapot", basic.teapot, name="teapot"),

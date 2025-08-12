@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}kinks{% endblock %}
+
+{% block content %}
+    <h1 class="display-1">Kinks and Sexual Preferences</h1>
+
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-tab-pane"
+                    type="button" role="tab" aria-controls="about-tab-pane" aria-selected="true">About</button>
+            <button class="nav-link" id="report-tab" data-bs-toggle="tab" data-bs-target="#report-tab-pane"
+                    type="button" role="tab" aria-controls="report-tab-pane" aria-selected="false">Report</button>
+            <button class="nav-link" id="tool-tab" data-bs-toggle="tab" data-bs-target="#tool-tab-pane"
+                    type="button" role="tab" aria-controls="tool-tab-pane" aria-selected="false">The Tool</button>
+        </div>
+    </nav>
+    <div class="tab-content h-100" id="tab-content">
+        <div class="tab-pane fade show active" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
+            <p class="pt-3">
+
+            </p>
+        </div>
+        <div class="tab-pane fade h-100" id="report-tab-pane" role="tabpanel" aria-labelledby="report-tab" tabindex="0">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <button class="btn btn-primary" style="font-size: larger;" type="button" href="{% static 'kinks-sex-preferences.pdf' %}">
+                    <i class="bi bi-filetype-pdf"></i> Download PDF
+                </button>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tool-tab-pane" role="tabpanel" aria-labelledby="tool-tab" tabindex="0">
+            <h2 class="m-2">Share code: <code id="share-code"></code> <button style="font-size: smaller" onclick="copy_code()"><i class="bi bi-copy"></i></button></h2>
+            <div class="container-fluid p-5">
+                <!--
+                    0: Hard limit
+                    1: Probably not
+                    2: Maybe
+                    3: Yes
+                    4: Favourite
+                 -->
+                {% for category in categories %}
+                    <div class="card" style="width: fit-content">
+                        <h3 class="card-header">{{ category.title }}</h3>
+                        <ul class="list-group list-group-flush">
+                            {% for item in category.items %}
+                                <li class="list-group-item">
+                                    <div class="btn-group me-2" role="group" aria-label="First group">
+                                        <button type="button" class="btn btn-danger" id="{{ item }}:0" onclick="update('{{ item }}', 0)">
+                                            <i class="bi bi-x-circle-fill"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-warning" id="{{ item }}:1" onclick="update('{{ item }}', 1)">
+                                            <i class="bi bi-question-circle-fill"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-secondary" id="{{ item }}:2" onclick="update('{{ item }}', 2)">
+                                            <i class="bi bi-question-circle-fill"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-success" id="{{ item }}:3" onclick="update('{{ item }}', 3)">
+                                            <i class="bi bi-check-circle-fill"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-info" id="{{ item }}:4" onclick="update('{{ item }}', 4)">
+                                            <i class="bi bi-star-fill"></i>
+                                        </button>
+                                    </div>
+                                    {{ item }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let state = {
+            {% for c in categories %}
+                {% for i in c.items %}
+                    "{{ i }}": 0,
+                {% endfor %}
+            {% endfor %}
+        };
+        
+        function update(k, i) {
+            state[k] = i;
+            document.getElementById("share-code").innerText = get_code();
+        }
+        
+        function get_code() {
+            // TODO: Improve code creation
+            let s = "0/";
+            for (let k in state) {
+                s += state[k];
+            }
+            
+            return s;
+        }
+        
+        function copy_code() {
+            navigator.clipboard.writeText(get_code());
+        }
+    </script>
+{% endblock %}

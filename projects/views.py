@@ -8,7 +8,7 @@ from .models import Terms
 
 
 def index(request: HttpRequest):
-    return render(request, "projects/index.html")
+    return render(request, "index.html")
 
 
 def kinks(request: HttpRequest):
@@ -27,27 +27,27 @@ def kinks(request: HttpRequest):
 
 
 def terminology(request: HttpRequest):
-    return render(request, "projects/terms.html")
+    return render(request, "terms.html")
 
-
-def get_terms():
-    # Only read file once
-    # TODO: When updated to use DB, will have to read each time for live updates
-    with open(settings.BASE_DIR / "main/projects/terms.csv") as f:
-        __raw_terms = f.read().splitlines()[1:]
-
-    for line in __raw_terms:
-        parts = [i.strip() for i in line.split("|")]
-        if len(parts) == 3:
-            yield parts
-        else:
-            print(f"[!] failed parsing '{line}' into three '|'-seperated parts.")
-
-
-# Import terms into DB on load
-Terms.objects.bulk_create([
-    Terms(old=i[0], new=i[1], description=i[2]) for i in get_terms() if not Terms.objects.filter(old=i[0]).exists()
-])
+#
+# def get_terms():
+#     # Only read file once
+#     # TODO: When updated to use DB, will have to read each time for live updates
+#     with open(settings.BASE_DIR / "projects/terms.csv") as f:
+#         __raw_terms = f.read().splitlines()[1:]
+#
+#     for line in __raw_terms:
+#         parts = [i.strip() for i in line.split("|")]
+#         if len(parts) == 3:
+#             yield parts
+#         else:
+#             print(f"[!] failed parsing '{line}' into three '|'-seperated parts.")
+#
+#
+# # Import terms into DB on load
+# Terms.objects.bulk_create([
+#     Terms(old=i[0], new=i[1], description=i[2]) for i in get_terms() if not Terms.objects.filter(old=i[0]).exists()
+# ])
 
 
 def terms_api(request: HttpRequest):
@@ -70,16 +70,16 @@ def browser(request: HttpRequest):
     }
     revealed = ...
 
-    return render(request, "projects/browser.html", context={"in_req": in_req, "revealed": revealed})
+    return render(request, "browser.html", context={"in_req": in_req, "revealed": revealed})
 
 def trans(request: HttpRequest):
-    return render(request, "projects/trans.html", context={
+    return render(request, "trans.html", context={
         "WPATH": '<abbr title="World Professional Association for Transgender Health">WPATH</abbr>',
         "IESOGI": '<abbr title="Independent Expert on protection against violence and discrimination based on Sexual Orientation and Gender Identity">IESOGI</abbr>'
     })
 
 def trans_dhsc(request: HttpRequest):
-    return render(request, "projects/trans/dhsc-email.html")
+    return render(request, "trans/dhsc-email.html")
 
 def trans_ehrc(request: HttpRequest):
-    return render(request, "projects/trans/ehrc-email.html")
+    return render(request, "trans/ehrc-email.html")
