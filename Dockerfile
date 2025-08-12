@@ -34,6 +34,7 @@ WORKDIR /workspace
 
 COPY --from=builder /workspace/venv venv
 COPY main main
+COPY opriq opriq
 COPY static static
 COPY manage.py manage.py
 COPY forward_logs.py forward_logs.py

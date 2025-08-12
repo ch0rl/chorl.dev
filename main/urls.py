@@ -32,5 +32,6 @@ urlpatterns = [
     path("418", basic.teapot, name="418"),
     path("articles", basic.articles, name="articles"),
     path("privacy", basic.privacy, name="privacy"),
-    path("bot", bots.invisible, name="bot-invisible")
+    path("bot", bots.invisible, name="bot-invisible"),
+    path("opriq/", include("opriq.urls"), name="opriq")
 ]
