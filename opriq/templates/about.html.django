@@ -1,4 +1,5 @@
 {% extends "base.html.django" %}
+{% load static %}
 {% block content %}
     <h1 class="display-1 p-5">
         About OPRiQ
@@ -7,6 +8,10 @@
     <p>
         <abbr title="Online Privacy Risk Quantifier">OPRiQ</abbr> provides a simple risk score between 0 and 100 - similar to a credit score.
         This score helps the user understand their online privacy risk, especially in relation to vulnerability to fraud.
+    </p>
+
+    <p>
+        For more detail on how this project came about, see <a href="{% static 'u2208993.pdf' %}">my report</a>.
     </p>
 
     {% for i in faqs %}
