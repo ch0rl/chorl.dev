@@ -1,0 +1,32 @@
+{% extends "base.html.django" %}
+{% block content %}
+    <h1 class="display-1 p-5">
+        About OPRiQ
+    </h1>
+
+    <p>
+        <abbr title="Online Privacy Risk Quantifier">OPRiQ</abbr> provides a simple risk score between 0 and 100 - similar to a credit score.
+        This score helps the user understand their online privacy risk, especially in relation to vulnerability to fraud.
+    </p>
+
+    {% for i in faqs %}
+    <div class="accordion m-2">
+        <div class="accordion-item" id="faq:{{ i.id }}">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq:{{ i.id }}:body"
+                        aria-expanded="false" aria-controls="faq:{{ i.id }}:body">
+                    {{ i.title }}
+                </button>
+            </h2>
+            <div id="faq:{{ i.id }}:body" class="accordion-collapse collapse" data-bs-parent="#faq:{{ i.id }}">
+                <div class="accordion-body d-flex" style="align-items: center; flex-direction: column">
+                    {% autoescape off %}
+                        {{ i.content }}
+                    {% endautoescape %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}
