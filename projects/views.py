@@ -8,7 +8,7 @@ from .models import Terms
 
 
 def index(request: HttpRequest):
-    return render(request, "index.html")
+    return render(request, "projects.html")
 
 
 def kinks(request: HttpRequest):
