@@ -13,11 +13,11 @@
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-tab-pane" 
-                    type="button" role="tab" aria-controls="about-tab-pane" aria-selected="true">About</button>
+                    type="button" role="tab" aria-controls="about-tab-pane" aria-selected="true" onclick="tab_switch('about-tab')">About</button>
             <button class="nav-link" id="method-tab" data-bs-toggle="tab" data-bs-target="#method-tab-pane" 
-                    type="button" role="tab" aria-controls="method-tab-pane" aria-selected="false">Methodology</button>
+                    type="button" role="tab" aria-controls="method-tab-pane" aria-selected="false" onclick="tab_switch('method-tab')">Methodology</button>
             <button class="nav-link" id="data-tab" data-bs-toggle="tab" data-bs-target="#data-tab-pane" 
-                    type="button" role="tab" aria-controls="data-tab-pane" aria-selected="false">The Data Itself</button>
+                    type="button" role="tab" aria-controls="data-tab-pane" aria-selected="false" onclick="tab_switch('data-tab')">The Data Itself</button>
         </div>
     </nav>
     <div class="tab-content" id="tab-content">

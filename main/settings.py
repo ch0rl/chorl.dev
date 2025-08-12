@@ -25,7 +25,8 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "www.chorl.dev",
-    ".chorl.dev"
+    ".chorl.dev",
+    "192.168.1.76"
 ]
 
 # Application definition
@@ -36,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'src.projects',
-    'src'
+    'main.projects',
+    'main',
+    'opriq'
 ]
 
 MIDDLEWARE = [
@@ -50,13 +52,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'src.urls'
+ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'src/pages'    
+            'main/pages'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -70,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'src.wsgi.application'
+WSGI_APPLICATION = 'main.wsgi.application'
 
 # ~~~ Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

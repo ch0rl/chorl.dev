@@ -33,7 +33,7 @@ ARG DB_PASS
 WORKDIR /workspace
 
 COPY --from=builder /workspace/venv venv
-COPY src src
+COPY main main
 COPY static static
 COPY manage.py manage.py
 COPY forward_logs.py forward_logs.py
@@ -45,4 +45,4 @@ RUN python manage.py migrate --noinput
 
 EXPOSE 8000
 
-CMD nginx & python forward_logs.py & gunicorn --bind localhost:8001 src.wsgi
+CMD nginx & python forward_logs.py & gunicorn --bind localhost:8001 main.wsgi

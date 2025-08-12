@@ -33,7 +33,7 @@ def terminology(request: HttpRequest):
 def get_terms():
     # Only read file once
     # TODO: When updated to use DB, will have to read each time for live updates
-    with open(settings.BASE_DIR / "src/projects/terms.csv") as f:
+    with open(settings.BASE_DIR / "main/projects/terms.csv") as f:
         __raw_terms = f.read().splitlines()[1:]
 
     for line in __raw_terms:
