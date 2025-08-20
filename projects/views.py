@@ -83,3 +83,6 @@ def trans_dhsc(request: HttpRequest):
 
 def trans_ehrc(request: HttpRequest):
     return render(request, "trans/ehrc-email.html")
+
+def trans_co(request: HttpRequest):
+    return render(request, "trans/co-email.html")
