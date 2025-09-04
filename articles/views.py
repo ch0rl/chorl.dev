@@ -1,5 +1,6 @@
 from django.http import HttpRequest, HttpResponseForbidden
 from django.shortcuts import render
+from pathlib import Path
 from .models import *
 
 
@@ -8,7 +9,7 @@ def index(request: HttpRequest):
 
 
 def article(request: HttpRequest, template: str):
-    if "/" in template or not template.endswith(".html"):
+    if "/" in Path(template).resolve() or not template.endswith(".html"):
         return HttpResponseForbidden()
     else:
         return render(request, template)
