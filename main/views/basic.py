@@ -23,7 +23,7 @@ def about(request: HttpRequest):
          "A person with <a href=\"https://autism.org.uk/advice-and-guidance/what-is-autism\" target=\"_blank\">Autism Spectrum Disorder</a>."],
         ["Socialist",
          "A general term for views regarding the collective ownership of capital by the people or the state, and other associated social policy; the polar opposite of capitalism."],
-        ["Anarchist", "Similar to how Chomsy defines anarchism: the anti-authoritarian wing of socialism."],
+        ["Anarchist", "Similar to how Chomsky defines anarchism: the anti-authoritarian wing of socialism."],
         ["Trans", "[Generally] someone who's gender assigned at birth does not align with their gender identity."],
         ["Non-binary", "Someone who's gender identity does not fit the typical binary of male/female."],
         ["Gender Fluid", "Someone who's gender identity is not constant."],
