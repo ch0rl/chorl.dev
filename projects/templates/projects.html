@@ -5,7 +5,7 @@
 {% block title %}projects{% endblock %}
 
 {% block content %}
-    <h1 class="display-1">Projects</h1>
+    <h1 class="display-1 pb-3">Longform Projects</h1>
     
     <div class="container-fluid d-flex">
         <div class="card m-2" style="width: 18rem;">
@@ -30,6 +30,12 @@
             <div class="card-body">
                 <h5 class="card-title"><a href="{% url 'trans' %}">Trans Rights and the UK</a></h5>
                 <p class="card-text">The international opinion on transgender, gender diverse, and gender non-conforming people and the UK&rsquo;s failings to meet that standard.</p>
+            </div>
+        </div>
+        <div class="card m-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><a href="{% url 'opriq-index' %}">OPRiQ</a></h5>
+                <p class="card-text">An online privacy risk quantifier - my BSc dissertation.</p>
             </div>
         </div>
     </div>
