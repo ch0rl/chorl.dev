@@ -5,7 +5,6 @@ from .models import *
 
 
 def index(request: HttpRequest):
-    print(*[i.__dict__ for i in Article.objects.all()], sep="\n")
     return render(request, "articles.html", context={"articles": Article.objects.all()})
 
 
