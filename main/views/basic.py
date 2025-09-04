@@ -60,9 +60,5 @@ def teapot(_):
     return HttpResponse("I'm a teapot", status=418)
 
 
-def articles(request: HttpRequest):
-    return render(request, "articles.html")
-
-
 def privacy(request: HttpRequest):
     return render(request, "privacy.html")
