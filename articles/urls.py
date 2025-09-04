@@ -3,5 +3,5 @@ from .views import *
 
 urlpatterns = [
     path("", index, name="articles"),
-    path("article/<str:template>", article, name="article")
+    path("<int:_id>", article, name="article")
 ]
