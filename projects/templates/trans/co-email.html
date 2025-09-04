@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'trans/email-base.html' %}
 
 {% load static %}
 
@@ -10,10 +10,12 @@
     <p>I lost access to my correspondence to the Cabinet Office, as it was done through their webform.</p>
 
     <h2>Cabinet Office Response of 20 August</h2>
-    <div id="response" class="rounded border p-3 my-3" style="max-width: max(80%, 800px)">
+    <div class="container-fluid">
+    <div class="row">
+    <div id="response" class="col rounded border p-3 my-3" style="max-width: max(80%, 800px)">
         <p>Dear Autumn,</p>
 
-        <p>Thank you for contacting the Cabinet Office on 14 July about ‘Trans Rights in the UK’.</p>
+        <p>Thank you for contacting the Cabinet Office on <span class="commented">14 July</span><sup>1</sup> about ‘Trans Rights in the UK’.</p>
 
         <p>
             We appreciate the concerns that you raised in your letter, and would like to take the time to outline the steps that this Government is taking to ensure that everyone, regardless of their sexual orientation or gender identity, can live their lives safely with dignity and respect.
@@ -73,5 +75,17 @@
             Public Correspondence Team<br>
             Cabinet Office
         </p>
+    </div>
+    <div class="col" style="max-width: fit-content">
+        <div class="comment">
+            <div>
+                1
+            </div>
+            <div>
+                It took them over a month to reply.
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 {% endblock %}
