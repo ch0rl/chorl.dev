@@ -6,4 +6,18 @@
 
 {% block content %}
     <h1 class="display-1">Shortform Articles</h1>
+
+    {% for article in articles %}
+    <div class="card my-3">
+        <div class="card-body">
+            <h2 class="card-title"><a href="{% url 'article' article.template %}">{{ article.title }}</a></h2>
+            <p class="card-text">
+                {{ article.desc }}
+            </p>
+        </div>
+        <div class="card-footer">
+            Updated {{ article.updated | time: "%c" }}
+        </div>
+    </div>
+    {% endfor %}
 {% endblock %}
