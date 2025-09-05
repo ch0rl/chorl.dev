@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
 
+{% block extra_head %}
+    <style>
+        blockquote {
+            font-style: italic;
+        }
+
+        blockquote::before {
+            content: "\F6B0";
+            font-family: bootstrap-icons;
+            font-size: x-large;
+        }
+    </style>
+{% endblock %}
+
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
