@@ -14,3 +14,7 @@ def article(request: HttpRequest, _id: int):
         return HttpResponseNotFound()
     else:
         return render(request, _article.template, context={"article": _article})
+
+
+def rhse_annex(request: HttpRequest):
+    return render(request, "sub/rhse-family.html")

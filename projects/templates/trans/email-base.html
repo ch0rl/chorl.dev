@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block extra_head %}
+    <style>
+        .comment {
+            width: fit-content;
+            display: flex;
+            margin: 1em;
+            border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+            border-radius: var(--bs-border-radius) !important;
+            max-width: 40vw;
+        }
+
+        .comment > :nth-child(1) {
+            padding: .5em;
+            width: fit-content;
+            background: var(--bs-primary);
+        }
+
+        .comment > :nth-child(2) {
+            padding: .5em;
+            flex: 1 1 auto;
+            width: 1%;
+            margin-bottom: 0;
+        }
+
+        .commented {
+            text-decoration: underline dashed 1px;
+        }
+    </style>
+{% endblock %}
