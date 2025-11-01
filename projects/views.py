@@ -71,18 +71,3 @@ def browser(request: HttpRequest):
     revealed = ...
 
     return render(request, "browser.html", context={"in_req": in_req, "revealed": revealed})
-
-def trans(request: HttpRequest):
-    return render(request, "trans.html", context={
-        "WPATH": '<abbr title="World Professional Association for Transgender Health">WPATH</abbr>',
-        "IESOGI": '<abbr title="Independent Expert on protection against violence and discrimination based on Sexual Orientation and Gender Identity">IESOGI</abbr>'
-    })
-
-def trans_dhsc(request: HttpRequest):
-    return render(request, "trans/dhsc-email.html")
-
-def trans_ehrc(request: HttpRequest):
-    return render(request, "trans/ehrc-email.html")
-
-def trans_co(request: HttpRequest):
-    return render(request, "trans/co-email.html")

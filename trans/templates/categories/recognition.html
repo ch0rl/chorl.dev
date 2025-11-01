@@ -1,0 +1,164 @@
+{% extends 'categories/category-base.html' %}
+
+{% block title %}| Gender Recognition{% endblock %}
+{% block heading %}Gender Recognition{% endblock %}
+
+{% block international %}
+    <p>
+        As very succinctly put by the {{ acronyms.iesogi }}, in a letter to the government of the UK:<sup>[<a href="#ref:iesogi:uk" class="cite"></a>: p. 3]</sup>
+    </p>
+    <blockquote>
+        gender identity must be recognised by law, and implemented under a standard of self-identification.
+    </blockquote>
+
+    <p>
+        The United Nations High Commissioner for Human Rights goes into more detail, recommending that:<sup>[<a href="#ref:unhr:free-and-eq" class="cite"></a>: p. 121]</sup>
+    </p>
+    <blockquote>
+        states should provide a straightforward administrative process to officially recognize the self-identified gender identity and name of transgender persons through a simple declaration without such requirements as medical certification or diagnosis, surgery or medical treatment, divorce or sterilization.
+        This process should include the ability to obtain new official documents reflecting self-identified gender, first name, gender marker and appearance. [...]
+        Legislation should allow for recognition of non-binary gender identities.
+        Minors should have access to recognition of their gender identity.
+    </blockquote>
+
+    <p>This is supported in another of the {{ acronyms.iesogi }}'s reports:<sup>[<a href="#ref:iesogi:protection" class="cite"></a>: &para;21 and &para;23]</sup></p>
+    <blockquote>
+        Self-determined gender is a fundamental part of a person&rsquo;s free and autonomous choice in relation to roles, feelings, forms of expression and behaviours, and a corner stone of the person&rsquo;s identity.
+        The resulting obligation of States is to provide access to gender recognition in a manner consistent with the rights to freedom from discrimination, equal protection of the law, privacy, identity and freedom of expression. [...]
+        lack of legal recognition negates the identity of the concerned persons to such an extent that it provokes what can be described as a fundamental rupture of State obligations.
+    </blockquote>
+
+    <p>Furthermore, the Yogyakarta Principles establish that states shall:<sup>[<a href="#ref:yprinciples" class="cite"></a>: Principle 3(B-C)]</sup></p>
+    <blockquote>
+        take all necessary legislative, administrative and other measures to fully respect and legally recognise each person’s self-defined gender identity;
+    </blockquote>
+    <blockquote>
+        take all necessary legislative, administrative and other measures to ensure that procedures exist whereby all state-issued identity papers which indicate a person’s gender/sex — including birth certificates, passports, electoral records and other documents — reflect the person’s profound self-defined gender identity;
+    </blockquote>
+
+    <p>This is expanded upon in the Yogyakarta Principles plus 10, which call on states to:<sup>[<a href="#ref:yprinciples+10" class="cite"></a>: Principle 31(C)]</sup></p>
+    <blockquote>
+        While sex or gender continues to be registered:
+        <ol type="i">
+            <li>Ensure a quick, transparent, and accessible mechanism that legally recognises and affirms each person&rsquo;s self-defined gender identity;</li>
+            <li>Make available a multiplicity of gender marker options;</li>
+            <li>Ensure that no eligibility criteria, such as medical or psychological interventions, a psycho-medical diagnosis, minimum or maximum age, economic status, health, marital or parental status, or any other third party opinion, shall be a prerequisite to change one’s name, legal sex or gender;</li>
+        </ol>
+    </blockquote>
+
+    <p>The {{ acronyms.iesogi }} combats so-called &ldquo;gender-critical&rdquo; arguments (more below):<sup>[<a href="#ref:iesogi:uk" class="cite"></a>: p. 13]</sup></p>
+    <blockquote>
+        the human rights of trans women are not dependent on the hypothetical risk that predatory men could disguise themselves as such and perpetrate crime [...]
+    </blockquote>
+    <blockquote>
+        in the countries that have legal recognition of gender identity based on self-identification, there is no credible evidence to suggest systemic risk of predatory men using the process of identifying and living as a woman as an opportunity to perpetrate gender or sexual-based violence.
+    </blockquote>
+
+    <p>These opinions are not restricted to the UN either (not that it would matter if so); the Parliamentary Assembly of the Council of Europe called on states to:<sup>[<a href="#ref:eu:res2048" class="cite"></a>: &para;6.2]</sup></p>
+    <blockquote>
+        develop quick, transparent and accessible procedures, based on self-determination, for changing the name and registered sex of transgender people on birth certificates, identity cards, passports, educational certificates and other similar documents; make these procedures available for all people who seek to use them, irrespective of age, medical status, financial situation or police record;
+    </blockquote>
+    <blockquote>
+        abolish sterilisation and other compulsory medical treatment, as well as a mental health diagnosis, as a necessary legal requirement to recognise a person’s gender identity in laws regulating the procedure for changing a name and registered gender;
+    </blockquote>
+    <blockquote>
+        consider including a third gender option in identity documents for those who seek it;
+    </blockquote>
+{% endblock %}
+{% block uk %}
+    <p>
+        UK law recognises gender through a person&rsquo;s &ldquo;legal sex&rdquo;, which is either male or female, and can be &ldquo;modified&rdquo; for most purposes by a Gender Recognition Certificate (GRC).
+    </p>
+
+    <h4>GRC Process</h4>
+    <p>To apply for a GRC, you must:<sup>[<a href="#ref:grc-guidance" class="cite"></a>, <a href="#ref:gra04" class="cite"></a>: &sect;2]</sup></p>
+    <ul>
+        <li>Be at least 18,</li>
+        <li>Have transitioned from male to female, or female to male,</li>
+        <li>Be diagnosed with gender dysphoria, and</li>
+        <li>Have been living in your gender for at least 2 years.</li>
+    </ul>
+
+    <p>You must also provide:</p>
+    <ul>
+        <li>A <abbr title="A declaration signed by a qualified professional.">statutory declaration</abbr>, stating that the above are true, the sex you have transitioned to, the date on which you transitioned, whether you are married or in a civil partnership, and details thereof,</li>
+        <li>Your certified birth/adoption certificate,</li>
+        <li>Evidence of name changes, where you have changed your name,</li>
+        <li>Evidence that you&rsquo;ve lived in your affirmed gender for the last 2 years,</li>
+        <li>
+            Two medical reports, one being written by an expert in gender identity and specifying:
+            <ul>
+                <li>Your diagnosis of gender dysphoria,</li>
+                <li>The reasons for this diagnosis.</li>
+            </ul>
+            Either of the reports must also specify any/all gender-affirming treatment you have had and plan to have.
+        </li>
+    </ul>
+
+    <h4><i>For Women Scotland v The Scottish Ministers</i> [2025] UKSC 16</h4>
+    <p>The UK Supreme Court, in <i>For Women Scotland v The Scottish Ministers</i>, decided that:</p>
+    <ol>
+        <li>&ldquo;Sex&rdquo;, in the Equality Act 2010, refers to one&rsquo;s sex assigned at birth, and is not modified by a GRC, and</li>
+        <li>The disapplication of the Gender Recognition Act 2004, by virtue of subsection 9(3)(1) of that Act, does not need to be explicit.</li>
+    </ol>
+    <p>This change in legislative interpretation removed trans people&rsquo;s right to access single-sex spaces and enforced a discriminatory, reductive, definition of sex in law.</p>
+
+    <h4>Self-ID</h4>
+    <p>The UK does not operate on a system of self-identification; on 19 March 2025, the Government said:<sup>[<a href="#ref:petition:self-id" class="cite"></a>]</sup></p>
+    <blockquote>
+        The Gender Recognition Act 2004 is a robust piece of legislation that reflects the seriousness of changing a person&rsquo;s legal gender.
+        The Government will not be introducing self-identification.
+    </blockquote>
+    <p>This is at odds to the international opinion that:<sup>[<a href="#ref:iesogi:uk" class="cite"></a>: p. 3]</sup></p>
+    <blockquote>
+        gender identity must be recognised by law, and implemented under a standard of self-identification
+    </blockquote>
+    <p>This was most recently recommended to the UK by the {{ acronyms.iesogi }} on 11 April 2024:<sup>[<a href="#ref:iesogi:uk2" class="cite"></a>: p. 17]</sup></p>
+    <blockquote>
+        [The UK should] simplify the administrative process of legal recognition of gender identity, in accordance with internationally recognized good practices of legal recognition of gender identity based on self-determination by the applicant, without abusive requirements, including for non-binary persons and children;
+    </blockquote>
+
+    <h4>Medical Requirements</h4>
+    <p>
+        A system of self-identification would necessarily do without any medical requirement, but it is still interesting to interrogate on its own.
+        On 19 March 2025, the Government said (my emphasis):<sup>[<a href="#ref:petition:self-id" class="cite"></a>]</sup>
+    </p>
+    <blockquote>
+        The Government is committed to modernising, simplifying and reforming the legal gender recognition process to remove indignities for trans people <strong>whilst retaining the need for a diagnosis of gender dysphoria</strong>.
+    </blockquote>
+    <p>However, it was previously recommended by the House of Commons' Women and Equalities Committee that:<sup>[<a href="#ref:wec:reform-gra" class="cite"></a>: &para;97]</sup></p>
+    <blockquote>
+        The Government should remove the diagnosis of gender dysphoria from the Gender Recognition Act by 2023, reflecting the support for this in responses to its own consultation.
+    </blockquote>
+    <p>This is supported by a vast array of international resources listed prior.</p>
+
+    <p>Most recently, a trans man was refused a GRC because he was trying to conceive;<sup>[<a href="#ref:glp:mpreg" class="cite"></a>]</sup> this seems blatantly contrary to the prior-analysed statements that gender recognition must not require sterilisation.<sup>[e.g., <a href="#ref:unhr:free-and-eq" class="cite"></a>: p. 121]</sup></p>
+
+    <h4>Non-Binary Genders</h4>
+    <p>
+        The UK only recognises &ldquo;male&rdquo; and &ldquo;female&rdquo;; UK courts have upheld this as being inline with international obligations.<sup>[<a href="#ref:c-v-grp" class="cite"></a>, <a href="#ref:ec-v-hs" class="cite"></a>]</sup>
+        This, of course, goes against the recommendation of the UN High Commissioner for Human Rights that &ldquo;legislation should allow for recognition of non-binary gender identities&rdquo;<sup>[<a href="#ref:unhr:free-and-eq" class="cite"></a>: p. 121]</sup>, Council of Europe recommendation that &ldquo;[states should] consider including a third gender option in identity documents for those who seek it&rdquo;,<sup>[<a href="#ref:eu:res2048" class="cite"></a>: 6.2.4]</sup> and others.
+    </p>
+
+    <h4>Children</h4>
+    <p>
+        As one must be 18 or older to apply for a GRC, this process is not open to children.
+        This is contrary to international opinion and recommendations.
+    </p>
+
+    <h4>Timescales</h4>
+    <p>
+        Nominally, the GRC process should take 2 years (&ldquo;have been living in your gender for at least 2 years&rdquo;) + 22 weeks (&ldquo;the panel will usually look at your application within 22 weeks of applying&rdquo;).
+        However, this overlooks the drastic issues with accessing healthcare right now.
+    </p>
+    <p>
+        As a GRC application requires a diagnosis of gender dysphoria, one must consider the time that that takes to get.
+        Such a diagnosis is only made from practitioners within a Gender Identity Clinic (GIC).
+        To get a diagnosis, one will need to:
+    </p>
+    <ol>
+        <li>Get referred, as some clinics do not allow for self-referrals (note: success in being referred is dependent on how accepting one&rsquo;s GP is),</li>
+        <li>Wait for 1-8 years for the first appointment (typically on the higher end of that range),<sup>[<a href="#ref:ta:gics" class="cite"></a>]</sup></li>
+        <li>Wait around 1 year for a second appointment, where a diagnosis may be made.</li>
+    </ol>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'categories/category-base.html' %}
+{% load static %}
+
+{% block title %}| Prisons{% endblock %}
+{% block heading %}Prisons{% endblock %}
+
+{% block international %}
+    <p>As very well put by the UN High Commissioner for Human Rights:<sup>[<a href="#ref:unhr:free-and-eq" class="cite"></a>: p. 128]</sup></p>
+    <blockquote>
+        Allocation and treatment of transgender detainees should be made on the basis of the detainee’s self-identified gender – not birth sex, gender markers on official documents, surgery, medical treatment or diagnostic.
+        Officials should use the name and pronouns preferred by the detainee.
+        Transgender detainees should be free to express their self-identified gender, including through their choice of clothing.
+        They should be able to choose the gender of officers carrying out any searches, including on specific body parts.
+    </blockquote>
+
+    <p>In coming to this decision, they note that:<sup>[<a href="#ref:unhr:free-and-eq" class="cite"></a>: p. 42]</sup></p>
+    <blockquote>
+        A gap noted in the preparation of the present report concerns reliance on legal gender status, rather than self-identified gender, as the basis for recognizing a detainee’s gender identity.
+        This exposes transgender detainees who have not obtained legal recognition of their identity to a range of violations and safety and security risks, highlighting the need for treatment of transgender detainees to be based on self-identification instead, even when legal recognition has not (yet) been obtained.
+    </blockquote>
+
+    <p>According to the &ldquo;Nelson Mandela Rules&rdquo;, prison filing systems should record:<sup>[<a href="#ref:mandela" class="cite"></a>: Rule 7(a)]</sup></p>
+    <blockquote>
+        Precise information enabling determination of [the prisoner&rsquo;s] unique identity, respecting his or her self-perceived gender;
+    </blockquote>
+
+    <p>As highlighted by Tomris Atabay et. al.:<sup>[<a href="#ref:undoc:special-needs" class="cite"></a>: pp. 108, 115, 118]</sup></p>
+    <blockquote>
+        Where transgender prisoners are accommodated according to their birth gender, especially when male to female transgender prisoners are placed with men, due to their birth gender being male, this paves the way to sexual abuse and rape.
+    </blockquote>
+    <blockquote>
+        The allocation of transgender prisoners can only be done in consultation with the prisoner concerned on a case-by-case basis.
+        Allocating prisoners according to their birth sex—and especially housing male to female transgender prisoners among male prisoners—actively facilitates the sexual abuse and rape of such offenders, irrespective of whether they have undergone sex reassignment surgery or not.
+    </blockquote>
+    <blockquote>
+        Should a strip search be deemed necessary, transgender prisoners should be provided with a choice regarding the gender of the person conducting the search, to ensure that the search is conducted by a person of the appropriate gender with minimum interference with personal dignity.
+    </blockquote>
+{% endblock %}
+
+{% block uk %}
+    <p>
+        Current UK policy houses trans men in line with their &ldquo;legal&rdquo; gender (as modified by a Gender Recognition Certificate<sup>[<a href="#ref:psi:trans" class="cite"></a>: p. 9]</sup>).
+        Trans women, however, can only be housed in the women&rsquo;s estate if they have no history of sexual or violent offending, no birth genitalia, and a Gender Recognition Certificate.<sup>[<a href="#ref:psi:trans-diagram" class="cite"></a>]</sup>
+    </p>
+
+    <img src="{% static 'images/2024_11_14_Annex_A_-_Transgender_Prisoners_-_Initial_Allocation_Process_Map.pdf.png' %}" alt="A flowchart explaining the placement of transgender prisoners in the UK" width="60%" class="p-3" />
+
+    <h3>Compared to International Opinion</h3>
+    <p>It is no suprise that &ldquo;there [have] been incidents of suicides by trans women held in men&rsquo;s prisons&rdquo;.<sup>[<a href="#ref:iesogi:uk2" class="cite"></a>: &para;66]</sup></p>
+
+    <p>
+        Taking into account the above, and the UK&rsquo;s approach to legal gender recognition, it is clear that the UK is not following international opinion on the treatment of detainees.
+        While this primarily stems from the lack of self-ID, the treatment based on genitalia deserves its own critique.
+        Prohibiting trans women from being in the women&rsquo;s estate solely due to their genitalia is not only dehumanising but also feeds into the rhetoric that trans women are all sexual predators; this is reinforced in the fact that one&rsquo;s &ldquo;anatomy&rdquo; forms part of their risk assessment.<sup>[<a href="#ref:psi:trans" class="cite"></a>: &para;4.24]</sup>
+        The {{ IESOGI }} describes these as &ldquo;deeply discriminatory stereotypes of trans and gender diverse persons based on ideas of predatory determinism&rdquo;.<sup>[<a href="#ref:iesogi:law-practices" class="cite"></a>: p. 6]</sup>
+    </p>
+
+    <p>
+        The searching policy brings other issues, as prisoners are generally treated in accordance with the estate they are in (men&rsquo;s or women&rsquo;s).
+        For one, transgender people without a GRC will be searched by officers of the same sex;<sup>[<a href="#ref:psi:search:a" class="cite"></a>: p. 3]</sup> clearly, this would cause immense distress, especially in the context of &ldquo;full&rdquo; searches<sup>[see <a href="#ref:psi:search" class="cite"></a>: &sect;4.11]</sup> (strip searches, colloquially).
+        As these searches are the minimum requirement for incoming prisoners in the male estate,<sup>[<a href="#ref:psi:search" class="cite"></a>: &para;4.7.7]</sup> it is foreseeable that the vast majority of transfeminine prisoners will be forced to strip in front of two male prison officers.
+        Of course, transmasculine prisoners would also suffer embarrassment and malgendering, but may not be subject to a &ldquo;full&rdquo; search, as the minimum requirement for the women&rsquo;s estate is a rub-down and hand-held metal detector search.<sup>[<a href="#ref:psi:search" class="cite"></a>: &sect;4.6]</sup>
+        A full search could be conducted if there was suspicion that the prisoner was concealing something,<sup>[<a href="#ref:psi:search" class="cite"></a>: &para;4.6.2]</sup> which could arise if, say, the prisoner is wearing a packer (a device used to give the impression of a bulge in the crotch).
+    </p>
+{% endblock %}

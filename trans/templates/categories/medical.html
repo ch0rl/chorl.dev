@@ -1,0 +1,122 @@
+{% extends 'categories/category-base.html' %}
+
+{% block title %}| Medical Transition{% endblock %}
+{% block heading %}Medical Transition{% endblock %}
+
+{% block international %}
+    <p>
+        {{ acronyms.wpath }} aim to establish the world best practice treatment for trans people in their <i>Standards of Care - Eighth Edition</i> (SOC-8).<sup>[<a href="#ref:wpath:soc8" class="cite"></a>]</sup>
+    </p>
+
+    <h3>Hormone Replacement Therapy</h3>
+    <p>
+        {{ acronyms.wpath }} recommend beginning hormone suppression and replacement on the first physical signs of puberty (Tanner Stage 2).<sup>[<a href="#ref:wpath:soc8" class="cite"></a>: Statements 12.1, 12.5]</sup>
+        Hormone suppression should be done through the use of <abbr title="Gonadotropin Releasing Hormone">GnRH</abbr> blockers in the first instance.<sup>[<a href="#ref:wpath:soc8" class="cite"></a>: Statement 12.2]</sup>
+        They support the argument that such treatments may be undertaken by primary care physicians (General Practitioners, or GPs, in the UK).<sup>[<a href="#ref:wpath:soc8" class="cite"></a>: p. S144]</sup>
+    </p>
+    <p>Their eligibility criteria boils down to:<sup>[<a href="#ref:wpath:soc8" class="cite"></a>: Appendix D]</sup></p>
+    <ol>
+        <li>Clear gender incongruence, meeting the relevant diagnostic criteria,</li>
+        <li>Informed consent, taking into account the risks and benefits, and</li>
+        <li>Having reached Tanner Stage 2.</li>
+    </ol>
+
+    <h3>Surgery</h3>
+    <p>
+        {{ acronyms.wpath }} recommend offering gonadectomies (removal of gonads) after six months of hormone treatment (where the person wishes to have hormone treatment).<sup>[<a href="#ref:wpath:soc8" class="cite"></a>: Statement 13.5]</sup>
+        As for other &ldquo;gender-affirming genital procedures&rdquo;, they recommend waiting until a patient is stable on their current medical treatment (where there is other medical treatment).<sup>[<a href="#ref:wpath:soc8" class="cite"></a>: Statement 13.6]</sup>
+    </p>
+    <p>
+        The eligibility criteria for surgery is essentially similar to that for HRT, except for adolescents who wish to have some form of hormone therapy, who should have been on these hormones for twelve months.<sup>[<a href="#ref:wpath:soc8" class="cite"></a>: Appendix D]</sup>
+    </p>
+{% endblock %}
+{% block uk %}
+    <h3>State of the UK</h3>
+    <p>In 2024, the {{ IESOGI }} called upon the UK to:<sup>[<a href="#ref:iesogi:uk2" class="cite"></a>: &para;92(a-b)]</sup></p>
+    <blockquote>
+        With regard to the right to health [...]:
+        <ol type="a">
+            <li>
+                Ensure that persons of diverse sexual orientations and gender identities have access to mental health support and treatment specific to their needs and delivered by trained medical providers;
+            </li>
+            <li>
+                Take concrete actions to reduce the years-long waiting times and waiting lists for gender-affirming health care and associated services;
+            </li>
+        </ol>
+    </blockquote>
+
+    <h4>Wait Times & GICs</h4>
+    <p>
+        Currently, the only way to access medical transition in the UK is through a Gender Identity Clinic (GIC).
+        To be seen at a GIC, one must first get referred; while some clinics allow self-referrals, not all do.<sup>[<a href="#ref:ta:gics" class="cite"></a>]</sup>
+        There have been many reports of GPs refusing to refer people, to the point where asking &ldquo;which GPs at [surgery] are trans-inclusive&rdquo; is a normal question raised within queer groups.
+        Once a referral has been made, the wait begins.
+        Wait times vary wildly between clinics, ranging from months to years,<sup>[<a href="#ref:ta:gics" class="cite"></a>]</sup> with most people experiencing over three year waits.
+        Clinics will generally refuse to give updates during this time, even to GPs.
+    </p>
+    <p>
+        Once seen, the first appointment will typically only be a screening assessment; it would only be after the second appointment where any medical intervention would be considered.<sup>[<a href="#ref:ta:1st-appt" class="cite"></a>]</sup>
+        The time between the first and second appointments ranges from six to twelve months, typically.
+    </p>
+    <p>
+        People have also noted that to get the care they need, they have to express their gender as being very binary.
+        Non-binary and gender-nonconforming people who do not fit neatly into the binary gender stereotypes have faced barriers in the GIC process.
+        The advice circulated through queer spaces is to act in line with the binary if one wishes to access healthcare; examples of this would be:
+    </p>
+    <ul>
+        <li>
+            For those assigned male at birth:
+            <ul>
+                <li>Having liked playing with dolls as a kid,</li>
+                <li>Not having liked sports at school,</li>
+                <li>Liking cooking, cleaning, and other housewife things,</li>
+                <li>Wearing feminine clothing, like skirts and dresses, and</li>
+                <li>Having long hair.</li>
+            </ul>
+        </li>
+        <li>
+            For those assigned female at birth:
+            <ul>
+                <li>Having liked masculine things in school: sports, etc,</li>
+                <li>Always having preferred shorts, trousers, and other masculine clothes, and</li>
+                <li>Having short hair.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>The Cass Review</h4>
+    <p style="font-size: smaller">
+        <i>I will refer to the Cass Review as a &ldquo;review&rdquo; herein, even though it does not meet that standard.</i>
+    </p>
+
+    <p>
+        The Cass Review was intended to be an &ldquo;Independent Review of gender identity services for children and young people&rdquo;.<sup>[<a href="#ref:na:cass" class="cite"></a>]</sup>
+        However, it has many flaws, as well put by McNamara et al.:<sup>[<a href="#ref:mcnamara" class="cite"></a>]</sup>
+    </p>
+    <blockquote>
+        the Review’s process and recommendations stake out an ideological position on care for transgender youth that is deeply at odds with the Review’s own findings
+    </blockquote>
+    <blockquote>
+        Far from evaluating the evidence in a neutral and scientifically valid manner, the Review obscures key findings, misrepresents its own data, and is rife with misapplications of the scientific method.
+        The Review deeply considers the possibility of gender-affirming interventions being given to someone who is not transgender, but without reciprocal consideration for transgender youth who undergo permanent, distressing physical changes when they do not receive timely care.
+    </blockquote>
+
+    <p>Furthermore, Noone et al., in their research, show:<sup>[<a href="#ref:noone" class="cite"></a>]</sup></p>
+    <blockquote>
+        that this programme of research has significant methodological problems; that the Cass Report’s application of evidence-based medicine (EBM) to Gender-Affirming Care (GAC) is flawed; and that the Review’s understanding of transgender identities and experiences deploys a paternalistic lens that disregards the competence of transgender young people.
+    </blockquote>
+
+    <p>
+        I won&rsquo;t repeat the points raised in this research any further, for brevity.<sup>[see also <a href="#ref:horton" class="cite"></a>, <a href="#ref:grijseels" class="cite"></a>, <a href="#ref:ruth" class="cite"></a>]</sup>
+    </p>
+
+    <p>
+        One key consequence of this review is the effective ban on puberty blockers for trans youth.
+        The Medicines (Gonadotrophin-Releasing Hormone Analogues) (Restrictions on Private Sales and Supplies) Order 2024, which came into force on 1 January 2025, prohibits the sale or supply of <abbr title="Gonadotropin Releasing Hormone">GnRH</abbr> analogues to those under 18 as a treatment for gender dysphoria/incongruence.
+        The one exception to this ban was for NHS prescriptions, but the NHS had already stopped giving such prescriptions to trans youth.<sup>[see <a href="#ref:nhs:gnrh" class="cite"></a>]</sup>
+        The only way for trans youth to access puberty blockers is due to be through an NHS trial, which has been criticised by the Council of Europe as not following the rules of informed consent,<sup>[<a href="#ref:coe:health" class="cite"></a>: p. 41]</sup> specifically that &ldquo;no undue influence [may be] exerted on subjects to participate in the clinical trial&rdquo;.<sup>[<a href="#ref:reg536-2014" class="cite"></a>, Article 28(1)(h)]</sup>
+    </p>
+
+    <h4>The Levy Review</h4>
+    <p>A similar review has now been announced to look at &ldquo;the operation and delivery of NHS adult Gender Dysphoria Clinics&rdquo;;<sup>[<a href="#ref:nhs:levy" class="cite"></a>]</sup> there is major speculation around how this will go, in light of the Cass Review.<sup>[<a href="#ref:ta:levy" class="cite"></a>]</sup></p>
+{% endblock %}
