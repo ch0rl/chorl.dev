@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'main',
     'opriq',
     'projects',
-    'articles',
-    'trans'
+    'articles'
 ]
 
 MIDDLEWARE = [

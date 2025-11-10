@@ -38,7 +38,6 @@ COPY opriq opriq
 COPY static static
 COPY projects projects
 COPY articles articles
-COPY trans trans
 COPY manage.py manage.py
 COPY forward_logs.py forward_logs.py
 

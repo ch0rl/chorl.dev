@@ -3,7 +3,7 @@ from random import shuffle
 from typing import List
 
 from django.http import HttpResponse, HttpRequest
-from django.shortcuts import render, resolve_url
+from django.shortcuts import redirect, render, resolve_url
 from .user_agents import BLOCK_ALL
 from django.templatetags.static import static
 
@@ -62,3 +62,7 @@ def teapot(_):
 
 def privacy(request: HttpRequest):
     return render(request, "privacy.html")
+
+
+def trans(request: HttpRequest):
+    return redirect("https://transrights.xyz?ref=chorl.dev", permanent=True)

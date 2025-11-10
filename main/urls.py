@@ -34,5 +34,5 @@ urlpatterns = [
     path("privacy", basic.privacy, name="privacy"),
     path("bot", bots.invisible, name="bot-invisible"),
     path("opriq/", include("opriq.urls"), name="opriq"),
-    path("trans", include("trans.urls"), name="trans")
+    path("trans", basic.trans, name="trans")
 ]
