@@ -14,17 +14,17 @@ class Handler(socketserver.BaseRequestHandler):
     queue = []
 
     def to_db(self, data):
-        # Handler.queue.append(data)
-        conn = psycopg2.connect(
-            f"dbname={Handler.db_name} user={Handler.db_user} host={Handler.db_host} password={Handler.db_pass}")
-        cur = conn.cursor()
-        cur.execute("insert into access_log ("
-                    "path, ip, stamp, user_agent, id_got, id_set, status, forwarded_for, referrer) values ("
-                    "%(path)s, %(ip)s, %(time)s, %(user_agent)s, %(user_id_got)s, %(user_id_set)s, "
-                    "%(status)s, %(x_forwarded_for)s, %(http_referrer)s);", data)
-        conn.commit()
-        cur.close()
-        conn.close()
+        Handler.queue.append(data)
+        # conn = psycopg2.connect(
+        #     f"dbname={Handler.db_name} user={Handler.db_user} host={Handler.db_host} password={Handler.db_pass}")
+        # cur = conn.cursor()
+        # cur.execute("insert into access_log ("
+        #             "path, ip, stamp, user_agent, id_got, id_set, status, forwarded_for, referrer) values ("
+        #             "%(path)s, %(ip)s, %(time)s, %(user_agent)s, %(user_id_got)s, %(user_id_set)s, "
+        #             "%(status)s, %(x_forwarded_for)s, %(http_referrer)s);", data)
+        # conn.commit()
+        # cur.close()
+        # conn.close()
 
     def handle(self):
         print(self.request[0], file=sys.stderr)
@@ -37,20 +37,20 @@ class Handler(socketserver.BaseRequestHandler):
             self.to_db(data)
 
     def setup(self):
-        # if len(Handler.queue) >= 5:
-        #     conn = psycopg2.connect(
-        #         f"dbname={Handler.db_name} user={Handler.db_user} host={Handler.db_host} password={Handler.db_pass}")
-        #     cur = conn.cursor()
-        #     for i in Handler.queue:
-        #         cur.execute("insert into access_log ("
-        #                     "path, ip, stamp, user_agent, id_got, id_set, status, forwarded_for, referrer) values ("
-        #                     "%(path)s, %(ip)s, %(time)s, %(user_agent)s, %(user_id_got)s, %(user_id_set)s, "
-        #                     "%(status)s, %(x_forwarded_for)s, %(http_referrer)s);", i)
-        #     conn.commit()
-        #     cur.close()
-        #     conn.close()
-        #     Handler.queue = []
-        pass
+        if len(Handler.queue) >= 5:
+            conn = psycopg2.connect(
+                f"dbname={Handler.db_name} user={Handler.db_user} host={Handler.db_host} password={Handler.db_pass}")
+            cur = conn.cursor()
+            for i in Handler.queue:
+                cur.execute("insert into access_log ("
+                            "path, ip, stamp, user_agent, id_got, id_set, status, forwarded_for, referrer) values ("
+                            "%(path)s, %(ip)s, %(time)s, %(user_agent)s, %(user_id_got)s, %(user_id_set)s, "
+                            "%(status)s, %(x_forwarded_for)s, %(http_referrer)s);", i)
+            conn.commit()
+            cur.close()
+            conn.close()
+            Handler.queue = []
+        # pass
 
 
 print("logging forwarding starting", file=sys.stderr)
